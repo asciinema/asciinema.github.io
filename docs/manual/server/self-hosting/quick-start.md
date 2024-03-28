@@ -39,6 +39,7 @@ a template.
         depends_on:
           postgres:
             condition: service_healthy
+        restart: unless-stopped
 
       postgres:
         image: docker.io/library/postgres:14
@@ -51,6 +52,7 @@ a template.
           interval: 2s
           timeout: 5s
           retries: 10
+        restart: unless-stopped
 
       caddy:
         image: caddy:2
@@ -62,6 +64,7 @@ a template.
         volumes:
           - caddy_data:/data
           - caddy_config:/config
+        restart: unless-stopped
 
     volumes:
       asciinema_data:
@@ -90,6 +93,7 @@ a template.
         depends_on:
           postgres:
             condition: service_healthy
+        restart: unless-stopped
 
       postgres:
         image: docker.io/library/postgres:14
@@ -102,6 +106,7 @@ a template.
           interval: 2s
           timeout: 5s
           retries: 10
+        restart: unless-stopped
 
     volumes:
       asciinema_data:
