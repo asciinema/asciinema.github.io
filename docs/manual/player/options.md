@@ -197,7 +197,7 @@ Defaults to `"width"`.
 !!! note
 
     Version 2.x of the player supported only the behaviour of the `false` value.
-    If you're [upgrading from v2 to v3](upgrading.md and want to preserve the
+    If you're [upgrading from v2 to v3](upgrading.md) and want to preserve the
     old sizing behaviour then include `fit: false` option.
 
 ### `controls`
