@@ -134,4 +134,4 @@ extra:
       link: https://twitter.com/asciinema
       name: asciinema on X (Twitter)
 
-copyright: Copyright &copy; 2023 Marcin Kulik
+copyright: Copyright &copy; 2023-<script>document.write(new Date().getFullYear())</script> Marcin Kulik
