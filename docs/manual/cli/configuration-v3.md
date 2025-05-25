@@ -11,68 +11,68 @@ Here's an overview of all available options for each configuration section.
 ```toml title="~/.config/asciinema/config.toml"
 [server]
 
-; asciinema server URL
-; If you run your own instance of asciinema server then set its address here
-; It can also be overriden by setting ASCIINEMA_SERVER_URL environment variable
+# asciinema server URL
+# If you run your own instance of asciinema server then set its address here
+# It can also be overriden by setting ASCIINEMA_SERVER_URL environment variable
 url = "https://asciinema.example.com"
 
 [recording]
 
-; Command to record, default: $SHELL
+# Command to record, default: $SHELL
 command = "/bin/bash -l"
 
-; Enable input (keyboard) recording, default: false
+# Enable input (keyboard) recording, default: false
 rec_input = true
 
-; List of environment variables to capture, default: SHELL,TERM
+# List of environment variables to capture, default: SHELL,TERM
 rec_env = "SHELL,TERM,USER"
 
-; Limit recorded terminal inactivity to max n seconds, default: off
+# Limit recorded terminal inactivity to max n seconds, default: off
 idle_time_limit = 2
 
-; Define hotkey for pausing recording (suspending capture of output),
-; default: ^\ (control + backslash)
+# Define hotkey for pausing recording (suspending capture of output),
+# default: ^\ (control + backslash)
 pause_key = "^p"
 
-; Define hotkey for adding a marker, default: none
+# Define hotkey for adding a marker, default: none
 add_marker_key = "^x"
 
-; Define hotkey prefix key - when defined other recording hotkeys must
-; be preceeded by it, default: no prefix
+# Define hotkey prefix key - when defined other recording hotkeys must
+# be preceeded by it, default: no prefix
 prefix_key = "^a"
 
 [playback]
 
-; Playback speed (can be fractional), default: 1
+# Playback speed (can be fractional), default: 1
 speed = 2
 
-; Limit replayed terminal inactivity to max n seconds, default: off
+# Limit replayed terminal inactivity to max n seconds, default: off
 idle_time_limit = 1
 
-; Define hotkey for pausing/resuming playback,
-; default: space
+# Define hotkey for pausing/resuming playback,
+# default: space
 pause_key = "p"
 
-; Define hotkey for stepping through playback, a frame at a time,
-; default: . (dot)
+# Define hotkey for stepping through playback, a frame at a time,
+# default: . (dot)
 step_key = "s"
 
-; Define hotkey for jumping to the next marker,
-; default: ]
+# Define hotkey for jumping to the next marker,
+# default: ]
 next_marker_key = "m"
 
 [notifications]
-; Desktop notifications are displayed in several situations, e.g. when
-; pausing/resuming the capture of terminal with ^\ keyboard shortcut.
+# Desktop notifications are displayed in several situations, e.g. when
+# pausing/resuming the capture of terminal with ^\ keyboard shortcut.
 
-; Should desktop notifications be enabled, default: true
+# Should desktop notifications be enabled, default: true
 enabled = false
 
-; Custom notification command
-; asciinema automatically detects available desktop notification system
-; (notify-send on GNU/Linux, osacript on macOS). Custom command can be
-; used if needed.
-; When invoked, environment variable $TEXT contains notification text.
+# Custom notification command
+# asciinema automatically detects available desktop notification system
+# (notify-send on GNU/Linux, osacript on macOS). Custom command can be
+# used if needed.
+# When invoked, environment variable $TEXT contains notification text.
 command = 'tmux display-message "$TEXT"'
 ```
 
