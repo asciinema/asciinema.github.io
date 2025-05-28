@@ -17,6 +17,7 @@ name | added in version | based on
 -----|------------------|-------
 `asciinema` | 2.0 |
 `dracula` | 3.6 | [draculatheme.com](https://draculatheme.com)
+`gruvbox-dark` | 3.10 | [github.com/morhetz/gruvbox](https://github.com/morhetz/gruvbox)
 `monokai` | 2.0 | [github.com/chriskempson/base16](https://github.com/chriskempson/base16)
 `nord` | 3.3 | [github.com/arcticicestudio/nord](https://github.com/arcticicestudio/nord)
 `solarized-dark` | 2.0 | [ethanschoonover.com/solarized/](https://ethanschoonover.com/solarized/)
