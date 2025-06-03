@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Desktop notifications
 
 During a recording session there are several situations where asciinema CLI
