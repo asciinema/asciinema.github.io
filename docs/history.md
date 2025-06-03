@@ -78,5 +78,5 @@ The final version of the asciinema CLI 2.x line, 2.4, was released in October
 2023. This was also the last version built with Python.
 
 The upcoming 3.0 version of the CLI has been rewritten in Rust, introducing live
-terminal streaming. As of May 2024, the new version is in the release candidate
+terminal streaming. As of May 2025, the new version is in the release candidate
 stage.
