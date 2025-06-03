@@ -21,12 +21,21 @@ the state of the terminal. This works out of the box on Linux (via
     of a program currently running in the foreground, e.g. a shell, vim etc.
 
 You can disable desktop notifications with the `notifications.enabled` option in
-the [config file](configuration.md):
+the [config file](configuration/index.md):
 
-```ini title="~/.config/asciinema/config"
-[notifications]
-enabled = no
-```
+=== "CLI 3.x"
+
+    ```toml title="~/.config/asciinema/config.toml"
+    [notifications]
+    enabled = false
+    ```
+
+=== "CLI 2.x"
+
+    ```ini title="~/.config/asciinema/config"
+    [notifications]
+    enabled = no
+    ```
 
 ## Custom notification command
 
@@ -40,10 +49,19 @@ The command is executed with the following environment variables:
 Below is an example of [tmux](https://github.com/tmux/tmux/wiki) status bar
 integration:
 
-```ini title="~/.config/asciinema/config"
-[notifications]
-command = tmux display-message "$TEXT"
-```
+=== "CLI 3.x"
+
+    ```toml title="~/.config/asciinema/config.toml"
+    [notifications]
+    command = 'tmux display-message "$TEXT"'
+    ```
+
+=== "CLI 2.x"
+
+    ```ini title="~/.config/asciinema/config"
+    [notifications]
+    command = tmux display-message "$TEXT"
+    ```
 
 The command is executed in a shell (`/bin/sh`), therefore it's possible to use
 shell constructs like pipes.

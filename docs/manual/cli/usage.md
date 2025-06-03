@@ -18,7 +18,7 @@ You can temporarily pause the capture of your terminal by pressing
 that must not be captured (e.g. pasting secrets). It's an equivalent of the
 "mute" functionality in an audio call. Resume the capture by pressing
 <kbd>ctrl+\</kbd> again. This shortcut (and [other shortcuts](shortcuts.md)) can
-be customized in the [config file](configuration.md). Capture state changes are
+be customized in the [config file](configuration/index.md). Capture state changes are
 signaled via [desktop notifications](desktop-notifications.md).
 
 Recording session ends when you exit the shell, which can be done either by
@@ -175,7 +175,7 @@ This command uploads a terminal session recorded with `rec` to [asciinema
 server](../server/index.md) instance, where it can be viewed and shared with a
 wider audience. Default upload target is [asciinema.org](https://asciinema.org),
 but it can be easily changed to [point to another server
-instance](configuration.md#asciinema_api_url).
+instance](configuration/v3.md#asciinema_server_url).
 
 It's likely that you would want to manage this and other uploaded recordings at
 some point, e.g. set a title or change terminal color theme. See [asciinema

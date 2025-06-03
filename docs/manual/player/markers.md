@@ -71,7 +71,7 @@ definitions:
 [17.389425, "o", "..."]
 ```
 
-asciinema recorder can be [configured](../cli/configuration.md) to have a
+asciinema recorder can be [configured](../cli/configuration/index.md) to have a
 keyboard shortcut for adding markers during the recording session. If you have
 an existing recording you can edit the file with your favourite editor and
 insert marker lines as shown in the above example.

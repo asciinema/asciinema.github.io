@@ -32,12 +32,22 @@ secure asciinema server easily.
 
 Once your server is up and running, you'll be able to upload your recordings by
 pointing [asciinema CLI](../../cli/index.md) to the server using the
-`ASCIINEMA_API_URL` environment variable:
+`ASCIINEMA_SERVER_URL` environment variable:
 
-```sh
-export ASCIINEMA_API_URL=https://asciinema.example.com
-asciinema upload demo.cast
-```
+=== "CLI 3.x"
+
+    ```sh
+    export ASCIINEMA_SERVER_URL=https://asciinema.example.com
+    asciinema upload demo.cast
+    ```
+
+=== "CLI 2.x"
+
+    ```sh
+    export ASCIINEMA_API_URL=https://asciinema.example.com
+    asciinema upload demo.cast
+    ```
+
 
 If you need help with installation or maintenance feel free to ask on [asciinema
 forum](https://discourse.asciinema.org) or in [asciinema Matrix

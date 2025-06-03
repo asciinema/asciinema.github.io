@@ -11,7 +11,7 @@ Markers can be added to a recording in two ways.
 
 During a recording session, you can add markers in real-time by pressing a
 configured [keyboard shortcut](shortcuts.md). Set `rec.add_marker_key` [config
-file option](configuration.md) first as there's no default binding at the
+file option](configuration/index.md) first as there's no default binding at the
 moment. When a marker is added a [desktop
 notification](desktop-notifications.md) is displayed.
 

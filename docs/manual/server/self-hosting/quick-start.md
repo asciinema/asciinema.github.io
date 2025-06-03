@@ -174,10 +174,19 @@ Congratulations! You have your own asciinema server instance 🎉
 Now, point asciinema CLI to your server by setting `ASCIINEMA_API_URL`, and
 upload a recording:
 
-```sh
-export ASCIINEMA_API_URL=https://asciinema.example.com
-asciinema upload demo.cast
-```
+=== "CLI 3.x"
 
-Check the [CLI configuration](../../cli/configuration.md) section for
+    ```sh
+    export ASCIINEMA_SERVER_URL=https://asciinema.example.com
+    asciinema upload demo.cast
+    ```
+
+=== "CLI 2.x"
+
+    ```sh
+    export ASCIINEMA_API_URL=https://asciinema.example.com
+    asciinema upload demo.cast
+    ```
+
+Check the [CLI configuration](../../cli/configuration/index.md) section for
 information on how to set the server URL permanently via the configuration file.
