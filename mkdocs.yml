@@ -60,7 +60,9 @@ nav:
       - manual/cli/quick-start.md
       - manual/cli/installation.md
       - manual/cli/usage.md
-      - manual/cli/configuration.md
+      - Configuration:
+        - manual/cli/configuration/v2.md
+        - manual/cli/configuration/v3.md
       - manual/cli/markers.md
       - manual/cli/shortcuts.md
       - manual/cli/desktop-notifications.md
