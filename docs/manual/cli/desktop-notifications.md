@@ -6,7 +6,8 @@ needs to display a user notification. Typical scenarios include:
 - recording is suspended/resumed with <kbd>ctrl+\</kbd>
   [shortcut](shortcuts.md),
 - [marker](markers.md) is added, with a user-defined shortcut,
-- file write error happens.
+- file write error happens,
+- live stream gets disconnected from the server.
 
 The notification must happen without printing anything to a terminal, therefore
 asciinema uses native desktop notifications for this, which don't interfere with
