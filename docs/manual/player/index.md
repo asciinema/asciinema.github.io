@@ -35,25 +35,25 @@ Check out the [quick start guide](quick-start.md) for basic setup overview.
 
 Notable features:
 
-* ability to copy-paste terminal content - it's just text after all!
-* smooth, timing-accurate playback,
-* [idle time optimization](options.md#idletimelimit) to skip periods of
+- ability to copy-paste terminal content - it's just text after all!
+- smooth, timing-accurate playback,
+- [idle time optimization](options.md#idletimelimit) to skip periods of
   inactivity,
-* [posters](options.md#poster),
-* [markers](markers.md) for navigation or auto-pause,
-* configurable [font families](options.md#terminalfontfamily) and [line
+- [posters](options.md#poster),
+- [markers](markers.md) for navigation or auto-pause,
+- configurable [font families](options.md#terminalfontfamily) and [line
   height](options.md#terminallineheight),
-* [automatic terminal scaling](options.md#fit) to fit into container element in
+- [automatic terminal scaling](options.md#fit) to fit into container element in
   most efficient way,
-* full-screen mode,
-* [multiple color themes for standard 16 colors](options.md#theme) + support for
+- full-screen mode,
+- [multiple color themes for standard 16 colors](options.md#theme) + support for
   256 color palette and 24-bit true color (ISO-8613-3),
-* [adjustable playback speed](options.md#speed),
-* [looped playback](options.md#loop), infinite or finite,
-* [starting playback at specific time](options.md#startat),
-* [API for programmatic control](api.md),
-* [keyboard shortcuts](shortcuts.md),
-* [support for other recording
+- [adjustable playback speed](options.md#speed),
+- [looped playback](options.md#loop), infinite or finite,
+- [starting playback at specific time](options.md#startat),
+- [API for programmatic control](api.md),
+- [keyboard shortcuts](shortcuts.md),
+- [support for other recording
   formats](loading.md#playing-other-recording-formats) like ttyrec, typescript.
 
 ---

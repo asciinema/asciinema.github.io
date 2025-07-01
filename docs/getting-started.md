@@ -6,10 +6,10 @@ hide:
 # Getting started
 
 This guide serves as your introduction to asciinema, starting with the basics of
-recording a terminal with [the asciinema CLI](manual/cli/index.md). We'll cover
-how to share recordings via [asciinema.org](https://asciinema.org), embed [the
+recording a terminal with [asciinema CLI](manual/cli/index.md). We'll cover
+how to share recordings via [asciinema.org](https://asciinema.org), embed [asciinema
 player](manual/player/index.md) on a website, and conclude with instructions for
-self-hosting [the server](manual/server/index.md).
+self-hosting [asciinema server](manual/server/index.md).
 
 ## Recording
 
@@ -75,10 +75,10 @@ examples.
 Replaying a recording in your terminal is handy but not as useful as sharing it
 with the wider audience on the internet.
 
-You can host your recordings at [asciinema.org](https://asciinema.org), which is
-a hosting platform for terminal recordings powered by [asciinema
-server](manual/server/index.md). _Hosting your recordings on asciinema.org is
-completely optional_ but has many benefits, e.g. easy sharing and embedding.
+You can host your recordings at [asciinema.org](https://asciinema.org), which
+is a public asciinema server instance that provides free hosting for terminal
+recordings. _Hosting your recordings on asciinema.org is completely optional_
+but has many benefits, e.g. easy sharing and embedding.
 
 Upload your recording to asciinema.org with:
 

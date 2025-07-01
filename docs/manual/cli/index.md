@@ -5,7 +5,7 @@ hide:
 
 # asciinema CLI
 
-__asciinema__ (aka asciinema CLI or asciinema recorder) is a command-line tool
+__asciinema CLI__ (also known as asciinema recorder) is a command-line tool
 for recording terminal sessions.
 
 Unlike typical _screen_ recording software, which records visual output of a
@@ -33,12 +33,12 @@ overview.
 
 Notable features:
 
-* [recording](usage.md#asciinema-rec-filename) and
+- [recording](usage.md#asciinema-rec-filename) and
   [replaying](usage.md#asciinema-play-filename) of
   sessions inside a terminal,
-* [light-weight recording format](../asciicast/v2.md), which is highly
+- [light-weight recording format](../asciicast/v2.md), which is highly
   compressible (down to 15% of the original size e.g. with `zstd` or `gzip`),
-* integration with [asciinema server](../server/index.md), e.g.
+- integration with [asciinema server](../server/index.md), e.g.
   [asciinema.org](https://asciinema.org), for easy recording hosting.
 
 ---

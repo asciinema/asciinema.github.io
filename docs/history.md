@@ -12,8 +12,8 @@ While Marcin had been playing with the idea of sharing terminal session
 recordings on the web since 2010, the working prototype of what eventually
 became asciinema came to life a bit later.
 
-Initially, all components of asciinema - [the recorder](manual/cli/index.md)
-(aka CLI), [the player](manual/player/index.md), and [the
+Initially, all components of asciinema - [asciinema CLI](manual/cli/index.md)
+(the recorder), [asciinema player](manual/player/index.md), and [asciinema
 server](manual/server/index.md) - were developed as parts of a single [Ruby on
 Rails](https://rubyonrails.org/) codebase. The recorder was a simple,
 single-file Python program. The player was a single JavaScript file with an
