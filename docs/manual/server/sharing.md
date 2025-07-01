@@ -13,7 +13,7 @@ button on the recording page. Anyone you give a link to can view the recording.
 
 When a recording link is opened, the look and feel of the player defaults to the
 settings used by the author on the recording settings page. Many of those can be
-overriden on a per-link basis by appending additional query parameters (`?...`)
+overridden on a per-link basis by appending additional query parameters (`?...`)
 to the link.
 
 For example, below link makes the player start at 25 second mark (`t=25`), play
@@ -139,7 +139,7 @@ Defaults to either:
 
 !!! warning
 
-    Setting `cols` to a value smaller then the one from the original recording
+    Setting `cols` to a value smaller than the one from the original recording
     may break the rendering of sessions containing "full screen" programs like
     `vim`, `htop` or `less`. It's usually safe to override `cols` for recordings
     of basic command execution in a shell.

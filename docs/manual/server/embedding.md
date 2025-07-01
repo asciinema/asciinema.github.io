@@ -179,7 +179,7 @@ Defaults to either:
 
 !!! warning
 
-    Setting `cols` to a value smaller then the one from the original recording
+    Setting `cols` to a value smaller than the one from the original recording
     may break the rendering of sessions containing "full screen" programs like
     `vim`, `htop` or `less`. It's usually safe to override `cols` for recordings
     of basic command execution in a shell.

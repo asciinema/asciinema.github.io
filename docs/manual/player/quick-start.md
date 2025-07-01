@@ -27,7 +27,7 @@ Download latest version of the player bundle from
 [releases page](https://github.com/asciinema/asciinema-player/releases/latest). You
 only need `asciinema-player.min.js` and `asciinema-player.css` files.
 
-First, add `asciinema-player.min.js`, `asciinema-player.css`and the `.cast` file of
+First, add `asciinema-player.min.js`, `asciinema-player.css` and the `.cast` file of
 your recording to your site's assets. The HTML snippet below assumes they're in
 the web server's root directory.
 

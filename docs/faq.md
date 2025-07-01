@@ -40,7 +40,7 @@ asciinema: recording finished
 [s,u,d]? _
 ```
 
-Versions prior 2.4 let you confirm or cancel the upload:
+Versions prior to 2.4 let you confirm or cancel the upload:
 
 ```
 asciinema: recording finished
@@ -103,7 +103,7 @@ are automatically deleted 7 days after they were uploaded.
 
 ## Can I edit/post-process the recording?
 
-Yes, but not (yet) in a way you would expect :)
+Yes, but not yet in the way you would expect :)
 
 [asciicasts](manual/asciicast/v2.md) are quite simple newline-delimited JSON
 files. You can edit them easily with any text editor which supports UTF-8. The
@@ -144,9 +144,9 @@ are saved in the local recording file only. Unless you publish your recording on
 the internet, e.g. on [asciinema.org](https://asciinema.org), it all stays with
 you.
 
-## Why am I getting `command not found` at the begining of the recording session?
+## Why am I getting `command not found` at the beginning of the recording session?
 
-When your record your terminal asciinema starts a new shell instance (as
+When you record your terminal asciinema starts a new shell instance (as
 indicated by `$SHELL` environment variable) by default. It invokes `exec
 $SHELL`, which in most cases translates to `exec /bin/bash` or `exec /bin/zsh`.
 This means the shell runs as an "interactive shell", but **not as a "login

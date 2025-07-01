@@ -106,7 +106,7 @@ link you can use to watch your recording in a web browser.
 
 ## Record and publish in one command
 
-If you ommit the filename the recording is saved to a temporary file. When the
+If you omit the filename the recording is saved to a temporary file. When the
 recording session ends asciinema enters interactive mode, which lets you decide
 what to do:
 
