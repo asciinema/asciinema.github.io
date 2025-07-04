@@ -80,9 +80,6 @@ nav:
       - manual/player/parsers.md
       - manual/player/upgrading.md
     - SERVER:
-      - manual/server/index.md
-      - manual/server/sharing.md
-      - manual/server/embedding.md
       - Self-hosting:
         - manual/server/self-hosting/index.md
         - manual/server/self-hosting/quick-start.md
@@ -90,6 +87,9 @@ nav:
         - manual/server/self-hosting/upgrading.md
         - manual/server/self-hosting/admin.md
         - manual/server/self-hosting/customization.md
+      - manual/server/index.md
+      - manual/server/sharing.md
+      - manual/server/embedding.md
     - AGG:
       - manual/agg/index.md
       - manual/agg/installation.md
