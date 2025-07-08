@@ -102,8 +102,8 @@ Common HTTP status codes used by the API for error cases:
     numerical ID (`id` in the table above) or a URL token.
 
     A URL token is a unique token assigned to unlisted and private recordings,
-    and used in place of the numerical ID in view URLs of those recordings. For
-    example, for a recording with the view URL
+    and used in place of the numerical ID in web URLs of those recordings. For
+    example, for a recording with the web URL
     `https://asciinema.org/a/iUagQ1fL8tBvSZYiQGfPFCWIP` the URL token is
     `iUagQ1fL8tBvSZYiQGfPFCWIP`.
 
@@ -256,8 +256,8 @@ curl -X DELETE -u ":${INSTALL_ID}" https://asciinema.org/api/v1/recordings/123
     numerical ID (`id` in the table above) or a URL token.
 
     A URL token is a unique token assigned to unlisted and private streams, and
-    used in place of the numerical ID in view URLs of those streams. For example, for a
-    stream with the view URL `https://asciinema.org/s/iUagQ1fL8tBvSZYi` the URL token
+    used in place of the numerical ID in web URLs of those streams. For example, for a
+    stream with the web URL `https://asciinema.org/s/iUagQ1fL8tBvSZYi` the URL token
     is `iUagQ1fL8tBvSZYi`.
 
 #### POST /api/v1/streams
