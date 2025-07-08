@@ -17,10 +17,10 @@ the steps displayed by the `asciinema auth` command.
 
 The exception is the upload endpoint (`POST /api/v1/recordings`). Unless the
 server uses `UPLOAD_AUTH_REQUIRED=1` [configuration
-option](self-hosting/configuration.md), this endpoint allows requests from
-unregistered CLIs. In such cases, created recordings are temporary and subject to
-automatic removal, unless the `asciinema auth` flow is completed on the same system
-within [server-configured grace
+option](self-hosting/configuration.md#authentication), this endpoint allows
+requests from unregistered CLIs. In such cases, created recordings are
+temporary and subject to automatic removal, unless the `asciinema auth` flow is
+completed on the same system within [server-configured grace
 period](../server/self-hosting/configuration.md#unclaimed-recordings-removal).
 See [asciinema auth](../cli/usage.md#asciinema-auth) documentation for more
 details.
