@@ -182,7 +182,7 @@ At the moment this is the only option.
 
 ## Why my shell prompt/theme isn't working during recording?
 
-See [this answer](#why-am-i-getting-command-not-found-at-the-begining-of-the-recording-session).
+See [this answer](#why-am-i-getting-command-not-found-at-the-beginning-of-the-recording-session).
 
 ## Why `upload failed: Invalid or revoked install ID`?
 
@@ -199,4 +199,4 @@ To re-enable uploads from this machine do this:
 
 ## Why some of my custom shell functions are not available during recording?
 
-See [this answer](#why-am-i-getting-command-not-found-at-the-begining-of-the-recording-session).
+See [this answer](#why-am-i-getting-command-not-found-at-the-beginning-of-the-recording-session).
