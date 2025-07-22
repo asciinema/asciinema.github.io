@@ -21,8 +21,8 @@ Usually, it's a matter of updating the container image tag:
 ```diff title="docker-compose.yml"
  services:
    asciinema:
--    image: ghcr.io/asciinema/asciinema-server:20240324
-+    image: ghcr.io/asciinema/asciinema-server:20240428
+-    image: ghcr.io/asciinema/asciinema-server:20241103
++    image: ghcr.io/asciinema/asciinema-server:20250722
      # ...
 ```
 
