@@ -296,6 +296,7 @@ Link: <https://asciinema.org/api/v1/user/streams?cursor=eyJpZCI6NTM5MDIsInByZWZp
     "url": "https://asciinema.org/s/En81VpLKVaA7U2NR",
     "ws_producer_url": "wss://asciinema.org/ws/S/9pJm0ppDDtuyBHWQ",
     "audio_url": null,
+    "live": true,
     "title": "Stream 1",
     "description": null,
     "visibility": "unlisted"
@@ -305,6 +306,7 @@ Link: <https://asciinema.org/api/v1/user/streams?cursor=eyJpZCI6NTM5MDIsInByZWZp
     "url": "https://asciinema.org/s/VaA7U2NREn81VpLK",
     "ws_producer_url": "wss://asciinema.org/ws/S/m0ppDDtuyBHWQ9pJ",
     "audio_url": null,
+    "live": false,
     "title": "Stream 2",
     "description": null,
     "visibility": "public"
@@ -314,6 +316,7 @@ Link: <https://asciinema.org/api/v1/user/streams?cursor=eyJpZCI6NTM5MDIsInByZWZp
     "url": "https://asciinema.org/s/pLKVaA7U2NREn81V",
     "ws_producer_url": "wss://asciinema.org/ws/S/DDtuyBHWQ9pJm0pp",
     "audio_url": null,
+    "live": true,
     "title": "Stream 3",
     "description": null,
     "visibility": "unlisted"
@@ -351,7 +354,8 @@ Accept: application/json
 
 {
   "title": "Stream Title",
-  "visibility": "public"
+  "visibility": "public",
+  "live": true
 }
 ```
 
@@ -367,6 +371,7 @@ Location: https://asciinema.org/s/En81VpLKVaA7U2NR
   "url": "https://asciinema.org/s/En81VpLKVaA7U2NR",
   "ws_producer_url": "wss://asciinema.org/ws/S/9pJm0ppDDtuyBHWQ",
   "audio_url": null,
+  "live": true,
   "title": "Stream Title",
   "description": null,
   "visibility": "public"
@@ -399,6 +404,7 @@ Accept: application/json
 {
   "title": "Updated Stream Title",
   "description": "Updated stream description",
+  "live": true
 }
 ```
 
@@ -413,6 +419,7 @@ Content-Type: application/json
   "url": "https://asciinema.org/s/En81VpLKVaA7U2NR",
   "ws_producer_url": "wss://asciinema.org/ws/S/9pJm0ppDDtuyBHWQ",
   "audio_url": null,
+  "live": true,
   "title": "Updated Stream Title",
   "description": "Updated stream description",
   "visibility": "unlisted"
