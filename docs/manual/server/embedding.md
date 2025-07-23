@@ -236,3 +236,9 @@ simply links to a recording. The preview image is an SVG file, which ensures it
 looks great in all contexts and on all screen sizes.
 
 <a href="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3" target="_blank"><img src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.svg" /></a>
+
+## oEmbed
+
+asciinema server provides [oEmbed](https://oembed.com/) endpoint at `/oembed`,
+which uses standard query params: `url` (required), `maxwidth`, `maxheight` and
+`format` (either `json` or `xml`, defaults to `json`).
