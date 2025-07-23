@@ -260,6 +260,78 @@ curl -X DELETE -u ":${INSTALL_ID}" https://asciinema.org/api/v1/recordings/123
     stream with the web URL `https://asciinema.org/s/iUagQ1fL8tBvSZYi` the URL token
     is `iUagQ1fL8tBvSZYi`.
 
+#### GET /api/v1/user/streams
+
+List own streams.
+
+This endpoint performs pagination and returns up to 10 streams per page by
+default. Use `limit` query param to use higher limit (up to 100).
+
+URL for the next page of results is returned in the standard
+[Link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Link)
+response header, with `rel` set to `next`.
+
+You can filter the streams by a prefix of a URL token (`En81VpLKVaA7U2NR` for
+the first stream in the response below) using `prefix=...` query param. For
+example: `prefix=En81`.
+
+**Request:**
+
+```http
+GET /api/v1/user/streams?limit=3 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+```
+
+**Response:**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Link: <https://asciinema.org/api/v1/user/streams?cursor=eyJpZCI6NTM5MDIsInByZWZpeCI6bnVsbH0%3D&limit=10>; rel="next"
+
+[
+  {
+    "id": 1,
+    "url": "https://asciinema.org/s/En81VpLKVaA7U2NR",
+    "ws_producer_url": "wss://asciinema.org/ws/S/9pJm0ppDDtuyBHWQ",
+    "audio_url": null,
+    "title": "Stream 1",
+    "description": null,
+    "visibility": "unlisted"
+  },
+  {
+    "id": 2,
+    "url": "https://asciinema.org/s/VaA7U2NREn81VpLK",
+    "ws_producer_url": "wss://asciinema.org/ws/S/m0ppDDtuyBHWQ9pJ",
+    "audio_url": null,
+    "title": "Stream 2",
+    "description": null,
+    "visibility": "public"
+  },
+  {
+    "id": 3,
+    "url": "https://asciinema.org/s/pLKVaA7U2NREn81V",
+    "ws_producer_url": "wss://asciinema.org/ws/S/DDtuyBHWQ9pJm0pp",
+    "audio_url": null,
+    "title": "Stream 3",
+    "description": null,
+    "visibility": "unlisted"
+  }
+]
+```
+
+**cURL example:**
+
+```bash
+INSTALL_ID=$(cat ~/.config/asciinema/install-id)
+
+curl -X GET \
+  -u ":${INSTALL_ID}" \
+  -H "Content-Type: application/json" \
+  https://asciinema.org/api/v1/user/streams?limit=3
+```
+
 #### POST /api/v1/streams
 
 Create a new live stream endpoint.
