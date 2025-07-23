@@ -332,7 +332,10 @@ Accept: application/json
 
 **Response:**
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
   "id": 123,
   "url": "https://asciinema.org/s/En81VpLKVaA7U2NR",
