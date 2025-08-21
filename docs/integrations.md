@@ -18,6 +18,7 @@ of cool things out there (in alphabetical order):
 - [asciinema-player-vue](https://github.com/xuchangjunjx/asciinema-player-vue) - Vue.js integration for asciinema-player
 - [asciinema-scenario](https://github.com/garbas/asciinema-scenario) - Create asciinema videos from a text file
 - [asciinema-scene](https://github.com/jdum/asciinema-scene) - Toolbox to edit asciinema screencasts
+- [asciinema-scripted](https://github.com/robmoss/asciinema-scripted) - Generate scripted asciinema recordings
 - [asciinema-trim](https://github.com/suzuki-shunsuke/asciinema-trim) - Trim and change the playback speed of asciinema's session
 - [asciinema-vsync](https://github.com/JakeWharton/asciinema-vsync) - Batch the commands inside an asciinema JSON file to reduce flickering
 - [AsciinemaGenerator.jl](https://github.com/GiggleLiu/AsciinemaGenerator.jl) - Generate asciinema `.cast` file from a Julia script
