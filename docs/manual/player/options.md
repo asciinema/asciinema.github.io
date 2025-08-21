@@ -191,7 +191,7 @@ Possible values:
 * `"width"` - scale to full width of the container
 * `"height"` - scale to full height of the container (requires the container element to have fixed height)
 * `"both"` - scale to either full width or height, maximizing usage of available space (requires the container element to have fixed height)
-* `false` / `"none"` - don't scale, use fixed size font (also see `fontSize` option below)
+* `false` / `"none"` - don't scale, use fixed size font (also see `terminalFontSize` option below)
 
 Defaults to `"width"`.
 
