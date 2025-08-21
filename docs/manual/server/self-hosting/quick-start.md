@@ -120,7 +120,7 @@ user sessions (amongst other things). You can generate one with the following
 command:
 
 ```sh
-tr -dc A-Za-z0-9 </dev/urandom | head -c 64; echo
+LC_CTYPE=C tr -dc "[:alnum:]" </dev/urandom | head -c 64; echo
 ```
 
 The `URL_SCHEME`, `URL_HOST` and `URL_PORT` variables configure the root URL
