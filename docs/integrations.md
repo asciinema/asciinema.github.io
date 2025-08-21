@@ -36,6 +36,7 @@ of cool things out there (in alphabetical order):
 - [spielbash](https://github.com/Malinskiy/spielbash) - Spielbash helps you to automate asciicasts with asciinema
 - [svg-term-cli](https://github.com/marionebl/svg-term-cli) - Share terminal sessions via SVG and CSS
 - [terminal-demo](https://github.com/ofek/terminal-demo) - Produce GIFs from shell commands
+- [vim-asciinema](https://github.com/inkarkat/vim-asciinema) - Vim filetype plugin / syntax highlighting for editing the raw `.cast` files
 - [wp-asciinema](https://github.com/passionsplay/wp-asciinema) - A WordPress plugin to allow for self-hosted asciicasts created with asciinema
 
 To add your own project here edit [this
