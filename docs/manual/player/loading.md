@@ -184,3 +184,39 @@ AsciinemaPlayer.create({ url: url, parser: parser }, containerElement);
 
 See [Parsers](parsers.md) for information on available built-in parsers and how
 to implement a custom one.
+
+## Playing live streams
+
+In addition to loading static asciicast files, the asciinema player supports
+connecting to live WebSocket streams for real-time terminal session viewing.
+This enables viewers to watch terminal sessions as they happen, with minimal
+latency (typically below 100ms).
+
+To connect the player to a live WebSocket stream:
+
+```javascript
+AsciinemaPlayer.create(
+  'ws://example.com/stream',
+  document.getElementById('demo')
+);
+```
+
+For example, asciinema server provides consumer endpoint for live streams at
+`/ws/s/<public-token>`. This is how the player hosted at asciinema.org connects
+to a stream:
+
+```javascript
+AsciinemaPlayer.create(
+  'wss://asciinema.org/ws/s/<public-token>',
+  document.getElementById('demo')
+);
+```
+
+Player's WebSocket driver, activated by use of `ws://` or `wss://` scheme,
+automatically handles stream protocol negotiation, uses adaptive buffering to
+achieve lowest possible latency, and gracefully handles disconnections
+(reconnect with backoff + jitter).
+
+For detailed information about implementing WebSocket streaming servers,
+including complete protocol specifications and message formats, see the [Live
+streaming](../server/streaming.md) in the server manual.

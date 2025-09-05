@@ -5,11 +5,12 @@ hide:
 
 # Getting started
 
-This guide serves as your introduction to asciinema, starting with the basics of
-recording a terminal with [asciinema CLI](manual/cli/index.md). We'll cover
-how to share recordings via [asciinema.org](https://asciinema.org), embed [asciinema
-player](manual/player/index.md) on a website, and conclude with instructions for
-self-hosting [asciinema server](manual/server/index.md).
+This guide serves as your introduction to asciinema, starting with the basics
+of recording a terminal with [asciinema CLI](manual/cli/index.md). We'll cover
+how to share recordings via [asciinema.org](https://asciinema.org), live stream
+terminal sessions, embed [asciinema player](manual/player/index.md) on a
+website, and conclude with instructions for self-hosting [asciinema
+server](manual/server/index.md).
 
 ## Recording
 
@@ -110,6 +111,40 @@ You can skip this step now, and do it later. However, all recordings not
 assigned to an account are automatically deleted after 7 days. See docs for
 [asciinema upload](manual/cli/usage.md#asciinema-upload-filename) and [asciinema
 auth](manual/cli/usage.md#asciinema-auth) commands for detailed information.
+
+## Live streaming
+
+In addition to recording terminal sessions to a file, asciinema also supports
+terminal live streaming. This is useful for live coding sessions, visual
+monitoring of servers (e.g. with `htop`), etc.
+
+To start a live stream to asciinema.org:
+
+```sh
+asciinema stream -r
+```
+
+This provides you with a URL that viewers can visit to watch your terminal
+session in real-time. The stream begins immediately and continues until you end
+the session by pressing <kbd>ctrl+d</kbd> or entering `exit`.
+
+This mode of streaming is called "remote streaming", as it sends the stream to
+a remote asciinema server, which acts as a (public) relay. Remote streaming
+works with any self-hosted asciinema server, not just asciinema.org.
+
+There's also local streaming mode:
+
+```sh
+asciinema stream -l
+```
+
+This starts a local web server that lets you access the live stream from your
+local machine or over LAN. This is purely local, "no-cloud" mode, and no data
+is sent anywhere.
+
+Run `asciinema stream --help` for more streaming options. Check out the [server
+streaming guide](manual/server/streaming.md) for technical details about the
+streaming protocols.
 
 ## Embedding
 

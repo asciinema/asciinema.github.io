@@ -361,7 +361,7 @@ Create a new live stream endpoint.
 
 This doesn't start the broadcast automatically. A live stream can be started by
 connecting to the producer WebSocket endpoint (`ws_producer_url`) and feeding
-session events into it.
+session events into it. See [Live streaming](streaming.md) for details.
 
 This endpoint doesn't require any attributes, but some may be provided.
 

@@ -89,6 +89,7 @@ nav:
         - manual/server/self-hosting/admin.md
         - manual/server/self-hosting/customization.md
       - API: manual/server/api.md
+      - manual/server/streaming.md
       - manual/server/sharing.md
       - manual/server/embedding.md
     - AGG:

@@ -129,6 +129,38 @@ asciinema: recording finished
     Recording without filename will either be prohibited or will default to
     saving a file in a current directory.
 
+## Stream a terminal session
+
+To stream your terminal live to asciinema.org:
+
+```sh
+asciinema stream -r
+```
+
+Similarly to the `upload` command, this one also lets you stream to a
+self-hosted [asciinema server](../server/index.md) instance.
+
+To stream locally:
+
+```sh
+asciinema stream -l
+```
+
+This starts a local web server which lets you watch the stream from a local
+machine or over LAN.
+
+Run `asciinema stream --help` for more streaming options.
+
+Finally, you can stream and record to a file at the same time:
+
+```sh
+asciinema session -o demo.cast -r -l
+```
+
+The session command is a more generic variant of `rec` and `stream`, that can
+do everything those two commands can. Run `asciinema session --help` for more
+details.
+
 ## Next
 
 These are the basics, but there's much more. See the [Usage](usage.md) section

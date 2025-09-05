@@ -612,14 +612,15 @@ accepts either `public`, `unlisted`, `private`.
 
 ### Stream limit
 
-By default, there's no limit to the number of streams a user can have. 
+By default, there's no limit to the number of live streams a user can have. 
 
 You can set a limit for each user individually in the [admin panel](admin.md).
 
 If you'd rather set a stream limit for everyone by default then set
-`DEFAULT_STREAM_LIMIT` to the maximum number of streams. Changing this doesn't
-affect existing users though, so you may still want to update the limit
-manually for each existing user.
+`DEFAULT_STREAM_LIMIT` to the maximum number of streams. Note that
+__changing/setting the default limit only affects new users__ - existing users
+retain their current limits and must be updated individually in the admin
+panel.
 
 ## Advanced configuration
 
