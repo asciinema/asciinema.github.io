@@ -107,7 +107,11 @@ Common HTTP status codes used by the API for error cases:
     `https://asciinema.org/a/iUagQ1fL8tBvSZYiQGfPFCWIP` the URL token is
     `iUagQ1fL8tBvSZYiQGfPFCWIP`.
 
-#### POST /api/v1/recordings
+#### Create
+
+```http
+POST /api/v1/recordings
+```
 
 Create a new recording from an [asciicast](../asciicast/v3.md) file.
 
@@ -162,7 +166,11 @@ curl -X POST \
   https://asciinema.org/api/v1/recordings
 ```
 
-#### PATCH /api/v1/recordings/:id
+#### Update
+
+```http
+PATCH /api/v1/recordings/:id
+```
 
 Update metadata and settings for an existing recording.
 
@@ -209,7 +217,11 @@ curl -X PATCH \
   https://asciinema.org/api/v1/recordings/123
 ```
 
-#### DELETE /api/v1/recordings/:id
+#### Delete
+
+```http
+DELETE /api/v1/recordings/:id
+```
 
 Permanently delete a recording.
 
@@ -260,7 +272,11 @@ curl -X DELETE -u ":${INSTALL_ID}" https://asciinema.org/api/v1/recordings/123
     stream with the web URL `https://asciinema.org/s/iUagQ1fL8tBvSZYi` the URL token
     is `iUagQ1fL8tBvSZYi`.
 
-#### GET /api/v1/user/streams
+#### List
+
+```http
+GET /api/v1/user/streams
+```
 
 List own streams.
 
@@ -335,7 +351,11 @@ curl -X GET \
   https://asciinema.org/api/v1/user/streams?limit=3
 ```
 
-#### POST /api/v1/streams
+#### Create
+
+```http
+POST /api/v1/streams
+```
 
 Create a new live stream endpoint.
 
@@ -390,7 +410,11 @@ curl -X POST \
   https://asciinema.org/api/v1/streams
 ```
 
-#### PATCH /api/v1/streams/:id
+#### Update
+
+```http
+PATCH /api/v1/streams/:id
+```
 
 Update metadata and settings for an existing stream.
 
@@ -438,7 +462,11 @@ curl -X PATCH \
   https://asciinema.org/api/v1/streams/123
 ```
 
-#### DELETE /api/v1/streams/:id
+#### Delete
+
+```http
+DELETE /api/v1/streams/:id
+```
 
 Permanently delete a stream.
 
