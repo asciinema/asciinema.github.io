@@ -11,12 +11,6 @@ guide](../../getting-started.md).
 asciinema CLI is available in most package repositories on Linux, macOS, and
 FreeBSD. Search for a package named `asciinema`.
 
-=== "pipx"
-
-    ``` bash
-    pipx install asciinema
-    ```
-
 === "apt (Debian, Ubuntu)"
 
     ``` bash
@@ -39,6 +33,9 @@ FreeBSD. Search for a package named `asciinema`.
 
     Check the [Installation](installation.md) section for all installation
     options.
+
+You can also download a pre-built, static binary of the latest version from the
+[releases](https://github.com/asciinema/asciinema/releases) page.
 
 ## Record a terminal session
 

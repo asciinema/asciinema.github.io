@@ -1,34 +1,16 @@
 # Installation
 
-asciinema CLI is available in most package repositories on Linux, macOS, and
-FreeBSD. Search for a package named `asciinema`.
+asciinema CLI can be installed in the following ways:
 
-You can also install the [PyPI](#pypi) package, use a [container
-image](#container-image), or [run from source](#from-source).
+- using operating system's package manager on Linux, macOS, and FreeBSD -
+  search for a package named `asciinema`,
+- download a pre-built, static binary of the latest version from the
+  [releases](https://github.com/asciinema/asciinema/releases) page,
+- use a [container image](#container-image),
+- [build from source](#from-source).
 
-## PyPI
-
-asciinema CLI is available on [PyPI](https://pypi.python.org/pypi/asciinema) and
-can be installed with `pipx`.
-
-=== "pipx"
-
-    If you have [pipx](https://pypa.github.io/pipx/) installed:
-
-    ```sh
-    pipx install asciinema
-    ```
-
-=== "pip"
-
-      Alternatively use `pip` (Python 3 with `setuptools` required):
-
-      ```sh
-      python3 -m pip install asciinema
-      ```
-
-This is a universal installation method for all operating systems, which always
-provides the latest released version.
+Older versions of asciinema (2.x) can also be obtained as the [PyPI](#pypi)
+package.
 
 ## Linux
 
@@ -147,6 +129,28 @@ sudo emerge -av asciinema
 ```sh
 pkg_add asciinema
 ```
+
+## PyPI
+
+asciinema CLI 2.x is available on
+[PyPI](https://pypi.python.org/pypi/asciinema) and can be installed with
+`pipx`.
+
+=== "pipx"
+
+    If you have [pipx](https://pypa.github.io/pipx/) installed:
+
+    ```sh
+    pipx install asciinema
+    ```
+
+=== "pip"
+
+      Alternatively use `pip` (Python 3 with `setuptools` required):
+
+      ```sh
+      python3 -m pip install asciinema
+      ```
 
 ## Container image
 

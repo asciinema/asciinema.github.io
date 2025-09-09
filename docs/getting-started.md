@@ -17,11 +17,10 @@ server](manual/server/index.md).
 Install the asciinema CLI first. There are several installation options to
 choose from:
 
-=== "pipx"
+=== "Download static binary"
 
-    ``` bash
-    pipx install asciinema
-    ```
+    You can download a pre-built, static binary of the latest version from the
+    [releases](https://github.com/asciinema/asciinema/releases) page.
 
 === "apt (Debian, Ubuntu)"
 
@@ -39,6 +38,12 @@ choose from:
 
     ``` bash
     brew install asciinema
+    ```
+
+=== "pipx (asciinema 2.4 only)"
+
+    ``` bash
+    pipx install asciinema
     ```
 
 === "Other"
