@@ -24,12 +24,12 @@ pre.ascii-logo {
  \__,_|___/\___|_|_|_| |_|\___|_| |_| |_|\__,_|
 </pre>
 
-__asciinema__ is a suite of tools for recording, replaying, and sharing terminal
-sessions. It is free and open-source software (FOSS), created by [Marcin
-Kulik](https://hachyderm.io/@ku1ik).
+__asciinema__ is a suite of tools for recording, streaming, and sharing
+terminal sessions. It is free and open-source software (FOSS), created by
+[Marcin Kulik](https://hachyderm.io/@ku1ik).
 
-Its typical use cases include creating tutorials, demonstrating
-command-line tools, and sharing reproducible bug reports. It focuses on
+Its typical use cases include creating tutorials, demonstrating command-line
+tools, live coding, and sharing reproducible bug reports. It focuses on
 simplicity and interoperability, which makes it a popular choice among computer
 users working with the command-line, such as developers or system
 administrators.

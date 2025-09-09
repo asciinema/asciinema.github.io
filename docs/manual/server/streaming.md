@@ -8,6 +8,8 @@ negotiation. For simpler clients/use-cases it provides basic protocol
 auto-detection. Streaming is subject to configurable limits including per-user
 stream count restrictions and bandwidth rate limiting.
 
+Live terminal streaming is supported by asciinema CLI since version 3.0.
+
 ## Architecture
 
 The live streaming architecture follows a producer-consumer model with three
@@ -201,7 +203,7 @@ back to `raw` if its heuristics fail.
 ### ALiS v1
 
 ALiS (Asciinema Live Stream) is the primary binary protocol supporting all
-session event types, while being light-weight on the wire. It's supported by
+session event types, while being lightweight on the wire. It's supported by
 asciinema CLI, server and player.
 
 Conceptually it's based on asciicast v3, but it's leaner and optimized for low

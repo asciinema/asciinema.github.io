@@ -146,6 +146,10 @@ Run `asciinema stream --help` for more streaming options. Check out the [server
 streaming guide](manual/server/streaming.md) for technical details about the
 streaming protocols.
 
+!!! note
+
+    Live streaming requires asciinema CLI 3.0 or newer.
+
 ## Embedding
 
 [asciinema player](manual/player/index.md) can be embedded on any website by

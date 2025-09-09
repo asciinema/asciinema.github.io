@@ -35,6 +35,7 @@ Check out the [quick start guide](quick-start.md) for basic setup overview.
 
 Notable features:
 
+- playback of [static recordings](../asciicast/v3.md) and [live terminal streams](loading.md#playing-live-streams),
 - ability to copy-paste terminal content - it's just text after all!
 - smooth, timing-accurate playback,
 - [idle time optimization](options.md#idletimelimit) to skip periods of

@@ -28,11 +28,38 @@ It's not a sorcery. Read about it on the [How it works](how-it-works.md) page.
 
 No.
 
-When you run `asciinema rec` without specifying the filename argument then after
-completing the recording you get a prompt which lets you decide what you want to
-do.
+When you recording with `asciinema rec <filename>` then the recording is
+saved locally, nothing is uploaded anywhere.
 
-asciinema 2.4+ lets you decide whether to save, upload or discard the recording:
+You can replay it directly in your terminal with:
+
+```
+asciinema play <filename>
+```
+
+At this point you have several options if you want to share it.
+
+First, if you want to host it on asciinema.org in the end then run:
+
+```
+asciinema upload <filename>
+```
+
+You can view the recording there and share it via secret (default) or public URL.
+
+If you'd rather host it yourself you have following options:
+
+- [use standalone asciinema player](manual/player/index.md) on your website, or
+- [set up your own asciinema server instance](manual/server/index.md) instance,
+  and [set API URL
+  accordingly](https://github.com/asciinema/asciinema-server/blob/master/docs/INSTALL.md#using-asciinema-recorder-with-your-instance).
+
+With older versions of asciinema CLI (2.x), when you run `asciinema rec`
+without specifying the filename argument then after completing the recording
+you get a prompt which lets you decide what to do.
+
+asciinema 2.4+ lets you decide whether to save, upload or discard the
+recording:
 
 ```
 asciinema: recording finished
@@ -47,36 +74,6 @@ asciinema: recording finished
 asciinema: press <enter> to upload to asciinema.org, <ctrl-c> to save locally
 _
 ```
-
-However, if you record with:
-
-```asciinema rec demo.cast```
-
-then the recording is saved to a local file in
-[asciicast](manual/asciicast/v2.md) format.
-
-You can now replay it directly in your terminal with:
-
-```
-asciinema play demo.cast
-```
-
-At this point you have several options if you want to share it.
-
-First, if you want to host it on asciinema.org in the end then run:
-
-```
-asciinema upload demo.cast
-```
-
-You can view the recording there and share it via secret (default) or public URL.
-
-If you'd rather host it yourself you have following options:
-
-- [use standalone asciinema player](manual/player/index.md) on your website, or
-- [set up your own asciinema server instance](manual/server/index.md) instance,
-  and [set API URL
-  accordingly](https://github.com/asciinema/asciinema-server/blob/master/docs/INSTALL.md#using-asciinema-recorder-with-your-instance).
 
 ## How can I delete a recording from asciinema.org?
 

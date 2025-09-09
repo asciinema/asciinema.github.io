@@ -1,7 +1,7 @@
 # Quick start
 
-This guide shows how to use asciinema CLI for recording, replaying and
-publishing terminal sessions.
+This guide shows how to use asciinema CLI for recording, replaying, publishing,
+and live streaming terminal sessions.
 
 For a broader overview of what's possible with asciinema check out the [intro
 guide](../../getting-started.md).
@@ -104,31 +104,6 @@ link you can use to watch your recording in a web browser.
     page with [asciinema player](../player/index.md), or publish them to a
     self-hosted [asciinema server](../server/index.md) instance.
 
-## Record and publish in one command
-
-If you omit the filename the recording is saved to a temporary file. When the
-recording session ends asciinema enters interactive mode, which lets you decide
-what to do:
-
-```console
-$ asciinema rec
-asciinema: recording asciicast to /tmp/tmpo8_612f8-ascii.cast
-asciinema: press <ctrl-d> or type "exit" when you're done
-$ echo hello
-hello
-$ exit
-asciinema: recording finished
-(s)ave locally, (u)pload to asciinema.org, (d)iscard
-[s,u,d]? _
-```
-
-!!! note
-
-    This behaviour is likely to change in
-    [v3.0](https://github.com/asciinema/asciinema/milestone/8) of the CLI.
-    Recording without filename will either be prohibited or will default to
-    saving a file in a current directory.
-
 ## Stream a terminal session
 
 To stream your terminal live to asciinema.org:
@@ -150,6 +125,10 @@ This starts a local web server which lets you watch the stream from a local
 machine or over LAN.
 
 Run `asciinema stream --help` for more streaming options.
+
+!!! note
+
+    Live streaming requires asciinema CLI 3.0 or newer.
 
 Finally, you can stream and record to a file at the same time:
 
