@@ -243,7 +243,7 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 ```
 
 Markers set with this option override all [markers embedded in asciicast
-files](../asciicast/v2.md#m-marker). If this option is not set the player
+files](../asciicast/v3.md#m-marker). If this option is not set the player
 defaults to markers found in the recording file (if any).
 
 [Markers overview](markers.md) provides more information on using markers.

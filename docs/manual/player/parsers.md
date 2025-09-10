@@ -6,7 +6,7 @@ fetches a file, it runs its contents through a parser, which turns it into a
 recording object used by the player's [recording
 driver](https://github.com/asciinema/asciinema-player/blob/develop/src/driver/recording.js).
 
-Default parser used by the player is the [asciicast](../asciicast/v2.md) parser,
+Default parser used by the player is the [asciicast](../asciicast/v3.md) parser,
 however another [built-in](#built-in-parsers) or [custom
 parser](#custom-parsers) can be used by including `parser` option in the source
 argument of `AsciinemaPlayer.create`:
@@ -55,7 +55,7 @@ Example recording model:
 }
 ```
 
-Similarly to [asciicast event codes](../asciicast/v2.md#event-stream), the codes
+Similarly to [asciicast event codes](../asciicast/v3.md#event-stream), the codes
 are:
 
 - `o` - output, i.e a write to a terminal
@@ -73,9 +73,9 @@ AsciinemaPlayer.create({ url: url, parser: 'parser-name' }, containerElement);
 
 ### asciicast
 
-`asciicast` parser handles both [asciicast v2](../asciicast/v2.md) and
-[asciicast v1](../asciicast/v1.md) file formats produced by [asciinema
-recorder](../cli/index.md).
+`asciicast` parser handles [asciicast v3](../asciicast/v3.md), [asciicast
+v2](../asciicast/v2.md) and [asciicast v1](../asciicast/v1.md) file formats
+produced by [asciinema recorder](../cli/index.md).
 
 This parser is the default and does not have to be explicitly selected.
 

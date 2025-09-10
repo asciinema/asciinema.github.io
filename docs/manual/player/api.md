@@ -201,7 +201,7 @@ Callback's 1st argument is an object with `data` field, which contains
 registered input value. Usually this is ASCII character representing a key, but
 may be a control character, like `"\r"` (enter), `"\u0001"` (ctrl-a), `"\u0003"`
 (ctrl-c), etc. See [input event in asciicast file
-format](../asciicast/v2.md#supported-event-codes) for more information.
+format](../asciicast/v3.md#supported-event-codes) for more information.
 
 ```javascript
 player.addEventListener('input', ({ data }) => {

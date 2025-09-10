@@ -231,7 +231,7 @@ as `CREATE/ALTER/DROP TABLE/COLUMN`.
 
 ## File store
 
-asciinema server stores uploaded [asciicast](../../asciicast/v2.md) files in a
+asciinema server stores uploaded [asciicast](../../asciicast/v3.md) files in a
 configured file store. By default it utilizes the local filesystem, but one can
 use any S3-compatible object store, such as [AWS
 S3](https://aws.amazon.com/s3/), [Cloudflare

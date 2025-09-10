@@ -53,7 +53,7 @@ If you keep your recordings on [asciinema.org](https://asciinema.org) or you
 recording settings page.
 
 Another way of defining markers is by embedding them directly in a recording.
-Note the lines with [`m` code](../asciicast/v2.md#m-marker) - those are marker
+Note the lines with [`m` code](../asciicast/v3.md#m-marker) - those are marker
 definitions:
 
 ``` json title="example.cast"

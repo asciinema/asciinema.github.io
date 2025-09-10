@@ -34,7 +34,7 @@ then asciinema has you covered.
 
 Notable features:
 
-- hosting of terminal session recordings in [asciicast](../asciicast/v2.md)
+- hosting of terminal session recordings in [asciicast](../asciicast/v3.md)
   format,
 - [live streaming](streaming.md) with WebSocket-based protocols for real-time
   terminal session broadcasting,

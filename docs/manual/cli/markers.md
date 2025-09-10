@@ -15,9 +15,9 @@ file option](configuration/index.md) first as there's no default binding at the
 moment. When a marker is added a [desktop
 notification](desktop-notifications.md) is displayed.
 
-For existing recordings, you can edit the [asciicast](../asciicast/v2.md) file
+For existing recordings, you can edit the [asciicast](../asciicast/v3.md) file
 with your favourite editor and insert marker events at desired time locations.
-See [marker events in asciicasts](../asciicast/v2.md#m-marker) for more
+See [marker events in asciicasts](../asciicast/v3.md#m-marker) for more
 information.
 
 ## Markers as breakpoints

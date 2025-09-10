@@ -101,7 +101,7 @@ are automatically deleted 7 days after they were uploaded.
 
 Yes, but not yet in the way you would expect :)
 
-[asciicasts](manual/asciicast/v2.md) are quite simple newline-delimited JSON
+[asciicasts](manual/asciicast/v3.md) are quite simple newline-delimited JSON
 files. You can edit them easily with any text editor which supports UTF-8. The
 recorded data is more or less a series of print statements, with [ansi escape
 sequences](https://en.wikipedia.org/wiki/ANSI_escape_code) (also known as
@@ -126,7 +126,7 @@ before you record it.
 asciinema CLI 2.0 introduced ability to record key presses with `asciinema rec
 --stdin` option (now called `--capture-input` in CLI 3.x). When this option is
 used then all typed in characters are captured as [stdin (i)
-events](manual/asciicast/v2.md#i-input-data-read-from-a-terminal) in the
+events](manual/asciicast/v3.md#i-input-data-read-from-a-terminal) in the
 resulting asciicast file. This _includes all passwords typed in from a
 keyboard_, even if "echo mode" is turned off. When replaying, these chars are
 not displayed as output, but they could be used with [asciinema

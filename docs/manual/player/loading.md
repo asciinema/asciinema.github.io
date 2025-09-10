@@ -70,8 +70,8 @@ AsciinemaPlayer.create({ data: data }, containerElement);
 
 The value of `data` can be:
 
-- a string containing asciicast in [v2](../asciicast/v2.md) or [v1](../asciicast/v1.md) format
-- an array representing asciicast in [v2](../asciicast/v2.md) format
+- a string containing asciicast in [v3](../asciicast/v3.md), [v2](../asciicast/v2.md) or [v1](../asciicast/v1.md) format
+- an array representing asciicast in [v3](../asciicast/v3.md) or [v2](../asciicast/v2.md) format
 - an object representing asciicast in [v1](../asciicast/v1.md) format
 - a function which returns one of the above (may be async)
 
@@ -168,7 +168,7 @@ structure produced by HTTP API.
 ## Playing other recording formats
 
 By default, recordings are parsed with a built-in
-[asciicast](../asciicast/v2.md) format parser.
+[asciicast](../asciicast/v3.md) format parser.
 
 If you have a recording produced by other terminal session recording tool (e.g.
 script, termrec, ttyrec) you can use one of [built-in file format

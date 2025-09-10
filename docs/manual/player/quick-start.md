@@ -91,7 +91,7 @@ The arguments are:
 - `opts` - configuration options (optional).
 
 In the most common case, `src` is a URL pointing to an
-[asciicast](../asciicast/v2.md) file. You can pass it as a full URL, e.g.
+[asciicast](../asciicast/v3.md) file. You can pass it as a full URL, e.g.
 `"https://example.com/demo.cast"`, an absolute path, e.g. `"/demo.cast"`, or a
 relative path, e.g. `"../casts/demo.cast"`.
 

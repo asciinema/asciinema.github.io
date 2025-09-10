@@ -57,9 +57,9 @@ Now record your terminal with:
 asciinema rec demo.cast
 ```
 
-This starts a new recording session, where everything printed to a terminal gets
-captured and saved to the `demo.cast` file in
-[asciicast](manual/asciicast/v2.md) format.
+This starts a new recording session, where everything printed to a terminal
+gets captured and saved to the `demo.cast` file in
+[asciicast](manual/asciicast/v3.md) format.
 
 To end the recording session simply exit the shell. This can be done by pressing
 <kbd>ctrl+d</kbd> or entering <code>exit</code>.
