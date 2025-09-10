@@ -59,7 +59,6 @@ nav:
       - manual/cli/index.md
       - manual/cli/quick-start.md
       - manual/cli/installation.md
-      - manual/cli/usage.md
       - Configuration:
         - manual/cli/configuration/index.md
         - manual/cli/configuration/v2.md

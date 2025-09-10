@@ -130,8 +130,7 @@ Defaults to either:
 
 - "Idle time limit" setting from the recording settings page,
 - `idle_time_limit` from [asciicast header](../asciicast/v2.md#header) (saved
-  when `--idle-time-limit <sec>` is used with [`asciinema
-  rec`](../cli/usage.md#asciinema-rec-filename)),
+  when `--idle-time-limit <sec>` is used with `asciinema rec`),
 - no limit if none of the above is present.
 
 ### theme

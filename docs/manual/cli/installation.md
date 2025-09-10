@@ -173,8 +173,7 @@ Pull the container:
     ```
 
 Container's entrypoint is set to `asciinema` binary therefore you can run the
-container with arguments you would normally pass to `asciinema` command (see
-[Usage](usage.md) for commands and options).
+container with arguments you would normally pass to `asciinema` command (run `asciinema --help` for commands and options).
 
 When running the container it's essential to allocate a pseudo-TTY (`-t`) and
 keep STDIN open (`-i`).

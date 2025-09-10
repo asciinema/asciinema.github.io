@@ -22,7 +22,7 @@ requests from unregistered CLIs. In such cases, created recordings are
 temporary and subject to automatic removal, unless the `asciinema auth` flow is
 completed on the same system within [server-configured grace
 period](../server/self-hosting/configuration.md#unclaimed-recordings-removal).
-See [asciinema auth](../cli/usage.md#asciinema-auth) documentation for more
+See `asciinema auth --help` for more
 details.
 
 !!! note

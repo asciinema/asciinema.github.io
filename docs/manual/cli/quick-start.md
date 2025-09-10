@@ -39,8 +39,7 @@ You can also download a pre-built, static binary of the latest version from the
 
 ## Record a terminal session
 
-To start a recording session use the [rec
-command](usage.md#asciinema-rec-filename):
+To start a recording session use the `rec` command:
 
 ```sh
 asciinema rec demo.cast
@@ -57,10 +56,11 @@ asciinema rec -c htop demo.cast
 
 The recording ends when you exit `htop` by pressing its `q` shortcut.
 
+Run `asciinema rec --help` for all recording options.
+
 ## Replay directly in a terminal
 
-To replay a recording in your terminal use [play
-command](usage.md#asciinema-play-filename):
+To replay a recording in your terminal use the `play` command:
 
 ```sh
 asciinema play demo.cast
@@ -83,6 +83,15 @@ You can pass `-i 2` to `asciinema rec` as well, to set it permanently on a
 recording. Idle time limiting makes the recordings much more interesting to
 watch. Try it!
 
+Run `asciinema play --help` for all playback options.
+
+!!! tip
+
+    For the best playback experience it is recommended to run `asciinema play`
+    in a terminal of size equal or bigger than the one used at the recording
+    time, as there's no "transcoding" of control sequences for the current
+    terminal size.
+
 ## Share via asciinema.org
 
 If you want to watch and share it on the web, upload it:
@@ -94,6 +103,8 @@ asciinema upload demo.cast
 The above command uploads it to [asciinema.org](https://asciinema.org), which is
 a default [asciinema server](../server/index.md) instance, and prints a secret
 link you can use to watch your recording in a web browser.
+
+Run `asciinema upload --help` for all upload options.
 
 !!! note
 
@@ -134,17 +145,23 @@ asciinema session -o demo.cast -r -l
 ```
 
 The session command is a more generic variant of `rec` and `stream`, that can
-do everything those two commands can. Run `asciinema session --help` for more
-details.
+do everything those two commands can.
+
+Run `asciinema session --help` for more details.
 
 ## Next
 
-These are the basics, but there's much more. See the [Usage](usage.md) section
-for detailed information on each command of the CLI.
+These are the basics, but there's much more. We highly encourage checking out
+`--help` information for each command - it contains way more information than
+was covered in this guide.
 
-If you're interested in sharing your recordings via asciinema.org please
-familiarize yourself with docs on [asciinema
-upload](usage.md#asciinema-upload-filename) and [asciinema
-auth](usage.md#asciinema-auth) commands.
+Last but not least! Consider creating shell aliases for frequently used
+commands:
+
+```sh
+alias rec='asciinema rec'
+alias play='asciinema play'
+alias stream='asciinema stream -r'
+```
 
 Happy recording!

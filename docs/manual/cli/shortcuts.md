@@ -10,8 +10,7 @@ Most of them can be customized in the [config file](configuration/index.md).
 
 ## Recording shortcuts
 
-The following keyboard shortcuts are available when recording with [`asciinema
-rec`](usage.md#asciinema-rec-filename):
+The following keyboard shortcuts are available when recording with `asciinema rec`:
 
 shortcut | action | 3.x config file option | 2.x config file option | notes
 ---------|--------|---------------|------|---
@@ -21,8 +20,7 @@ shortcut | action | 3.x config file option | 2.x config file option | notes
 
 ## Playback shortcuts
 
-The following keyboard shortcuts are available when replaying with [`asciinema
-play`](usage.md#asciinema-play-filename):
+The following keyboard shortcuts are available when replaying with `asciinema play`:
 
 shortcut | action | 3.x config file option | 2.x config file option | notes
 ---------|--------|---------------|------|---
@@ -36,14 +34,14 @@ shortcut | action | 3.x config file option | 2.x config file option | notes
 You can define a "prefix key" for the recording shortcuts with `rec.prefix_key`
 option in the config file:
 
-=== "CLI 3.x"
+=== "CLI 3.0+"
 
     ```toml title="~/.config/asciinema/config.toml"
     [recording]
     prefix_key = "C-a"
     ```
 
-=== "CLI 2.x"
+=== "CLI 2.0+"
 
     ```ini title="~/.config/asciinema/config"
     [rec]

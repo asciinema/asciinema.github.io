@@ -78,8 +78,7 @@ _
 ## How can I delete a recording from asciinema.org?
 
 In order to be able to delete a recording you first need to associate it with an
-asciinema.org user account. You can do that by using [asciinema
-auth](manual/cli/usage.md#asciinema-auth) command. Once you complete this step
+asciinema.org user account. You can do that by using `asciinema auth` command (run `asciinema auth --help` for details). Once you complete this step
 look for a dropdown with a gear icon on recording page (it's below the player,
 on the right side).
 
@@ -125,8 +124,8 @@ asciinema. Make sure you know how an application is handling password input
 before you record it.
 
 asciinema CLI 2.0 introduced ability to record key presses with `asciinema rec
---stdin` option. When this option is used then all typed in characters are
-captured as [stdin (i)
+--stdin` option (now called `--capture-input` in CLI 3.x). When this option is
+used then all typed in characters are captured as [stdin (i)
 events](manual/asciicast/v2.md#i-input-data-read-from-a-terminal) in the
 resulting asciicast file. This _includes all passwords typed in from a
 keyboard_, even if "echo mode" is turned off. When replaying, these chars are
@@ -134,7 +133,7 @@ not displayed as output, but they could be used with [asciinema
 player](manual/player/index.md) to implement [custom event handler for input
 events](manual/player/api.md#input-event).
 
-`--stdin` basically does keylogging that is scoped to a _single_ shell instance
+`--capture-input` basically does keylogging that is scoped to a _single_ shell instance
 / terminal tab. Given its sensitive nature it's disabled by default and has to
 be explicitly enabled (opted-in). However, even if enabled, captured key presses
 are saved in the local recording file only. Unless you publish your recording on

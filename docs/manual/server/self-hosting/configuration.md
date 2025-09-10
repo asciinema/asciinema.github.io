@@ -512,13 +512,11 @@ another port, use `URL_PORT` variable, e.g `URL_PORT=8443`.
 
 ### Authentication
 
-By default uploading with [`asciinema
-upload`](../../cli/usage.md#asciinema-upload-filename) doesn't require
-authentication via [`asciinema auth`](../../cli/usage.md#asciinema-auth),
-meaning anyone can upload new recordings. This is useful in trusted
-environments, such as private LANs/homelabs. If you run a public asciinema
-server instance, or prefer to disable unauthenticated uploads for other
-reasons, then set `UPLOAD_AUTH_REQUIRED=true`.
+By default uploading with `asciinema upload` doesn't require authentication via
+`asciinema auth`, meaning anyone can upload new recordings. This is useful in
+trusted environments, such as private LANs/homelabs. If you run a public
+asciinema server instance, or prefer to disable unauthenticated uploads for
+other reasons, then set `UPLOAD_AUTH_REQUIRED=true`.
 
 ### Recording visibility
 
@@ -556,12 +554,11 @@ example, `UPLOAD_SIZE_LIMIT=16000000` changes the limit to 16 MB.
 
 ### Unclaimed recordings removal
 
-When a recording is uploaded with [`asciinema
-upload`](../../cli/usage.md#asciinema-upload-filename) from a new system, it's
-not linked to any user account, unless [`asciinema
-auth`](../../cli/usage.md#asciinema-auth) was used to authenticate the CLI with
-the server (either before or after the upload). By default, such "unclaimed"
-recordings, are kept forever on a self-hosted asciinema server.
+When a recording is uploaded with `asciinema upload` from a new system, it's
+not linked to any user account, unless `asciinema auth` was used to
+authenticate the CLI with the server (either before or after the upload). By
+default, such "unclaimed" recordings, are kept forever on a self-hosted
+asciinema server.
 
 To enable automatic "garbage collection" for unclaimed recordings, use
 `UNCLAIMED_RECORDING_TTL` variable, set to the number of days after which each

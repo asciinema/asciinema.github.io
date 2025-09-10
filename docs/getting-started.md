@@ -113,9 +113,8 @@ This command displays a URL, which, when opened in a web browser, authenticates
 the CLI with your asciinema.org account, ensuring you have access to your uploads.
 
 You can skip this step now, and do it later. However, all recordings not
-assigned to an account are automatically deleted after 7 days. See docs for
-[asciinema upload](manual/cli/usage.md#asciinema-upload-filename) and [asciinema
-auth](manual/cli/usage.md#asciinema-auth) commands for detailed information.
+assigned to an account are automatically deleted after 7 days. Run `asciinema
+upload --help` and `asciinema auth --help` for detailed information.
 
 ## Live streaming
 

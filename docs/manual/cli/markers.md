@@ -1,9 +1,9 @@
 # Markers
 
-Markers are specific time locations in a recording, useful for automation of the
-playback. [`asciinema play`](usage.md#asciinema-play-filename) can use them as
-breakpoints, while [asciinema web player](../player/index.md) can also use them
-for navigation and advanced automation.
+Markers are specific time locations in a recording, useful for automation of
+the playback. `asciinema play -m` command can use them as breakpoints, while
+[asciinema web player](../player/index.md) can also use them for navigation and
+advanced automation.
 
 ## Adding markers to a recording
 
