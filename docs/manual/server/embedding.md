@@ -43,7 +43,7 @@ Here's how it looks:
 <script src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.js" id="asciicast-bJMOlPe5F4mFLY0Rl6fiJSOp3" async></script>
 
 The look and feel of the inline player defaults to the settings used by the
-author on the recording settings page. Many of those can be overriden by using
+author on the recording settings page. Many of those can be overridden by using
 [custom data
 attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
 with the `<script>` tag.

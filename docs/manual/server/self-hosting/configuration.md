@@ -56,7 +56,7 @@ variables:
     ```
 
     Setting `URL_SCHEME=https` automatically sets the port to 443. This can be
-    overriden by setting`URL_PORT` explicitly.
+    overridden by setting `URL_PORT` explicitly.
 
     For a complete HTTPS setup see [HTTPS](#https).
 
@@ -135,7 +135,7 @@ and user account information, among other data.
 The `DATABASE_URL` environment variable configures the database connection. It
 uses the standard format of
 `postgresql://username:password@hostname:port/dbname`. Port number can be
-ommited when connecting to the standard PostgreSQL port 5432.
+omitted when connecting to the standard PostgreSQL port 5432.
 
 ### PostgreSQL container
 
@@ -343,7 +343,7 @@ Here's a complete list of available SMTP settings:
 - `SMTP_TLS` - set to `always`, `never` or `if_available`, defaults to `if_available`
 - `SMTP_ALLOWED_TLS_VERSIONS` - set allowed TLS versions, defaults to `tlsv1,tlsv1.1,tlsv1.2`
 - `SMTP_AUTH` - set to `always` or `if_available`, defaults to `if_available`
-- `SMTP_NO_MX_LOOKUPS` - set to `true` to disable MX lookups and connect directly to the server of receipient's domain
+- `SMTP_NO_MX_LOOKUPS` - set to `true` to disable MX lookups and connect directly to the server of recipient's domain
 
 Additionally, following variables can be used to adjust the mail headers:
 

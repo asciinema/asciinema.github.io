@@ -60,4 +60,4 @@ document.fonts.load("1em FiraCode Nerd Font").then(() => {
 
     If you know that your audience has the desired font already installed on
     their systems, e.g. when you choose a font that comes preinstalled with an
-    OS, then you may try without using `documents.fonts.load()`.
+    OS, then you may try without using `document.fonts.load()`.

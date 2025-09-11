@@ -28,7 +28,7 @@ It's not a sorcery. Read about it on the [How it works](how-it-works.md) page.
 
 No.
 
-When you recording with `asciinema rec <filename>` then the recording is
+When you record with `asciinema rec <filename>` then the recording is
 saved locally, nothing is uploaded anywhere.
 
 You can replay it directly in your terminal with:

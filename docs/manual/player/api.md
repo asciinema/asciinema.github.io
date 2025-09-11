@@ -157,7 +157,7 @@ player.addEventListener('play', () => {
 
     There's subtle difference between the `play` event and the `playing` event
     (below). If the recording is not [preloaded](options.md#preload) (default
-    behaviour) then `play` is trigerred when the player _initiates_ the playback
+    behaviour) then `play` is triggered when the player _initiates_ the playback
     and starts fetching the recording. In other words, `play` signals the intent
     of playback. `playing` signals the actual start.
 
