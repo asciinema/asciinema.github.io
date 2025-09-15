@@ -26,7 +26,7 @@ a template.
     ```yaml title="docker-compose.yml"
     services:
       asciinema:
-        image: ghcr.io/asciinema/asciinema-server:20250722
+        image: ghcr.io/asciinema/asciinema-server:20250915
         environment:
           - SECRET_KEY_BASE=  # <- see below
           - URL_HOST=asciinema.example.com
@@ -75,7 +75,7 @@ a template.
     ```yaml title="docker-compose.yml"
     services:
       asciinema:
-        image: ghcr.io/asciinema/asciinema-server:20250722
+        image: ghcr.io/asciinema/asciinema-server:20250915
         ports:
           - '80:4000'
         environment:
@@ -110,7 +110,7 @@ a template.
 
 Let's break it down.
 
-The `asciinema` container uses a server image version tagged `20250722`. This is
+The `asciinema` container uses a server image version tagged `20250915`. This is
 merely an example; please check the
 [releases](https://github.com/asciinema/asciinema-server/releases) page for the
 latest stable version number and use that instead.
