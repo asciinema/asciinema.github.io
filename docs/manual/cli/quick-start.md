@@ -13,20 +13,28 @@ FreeBSD. Search for a package named `asciinema`.
 
 === "apt (Debian, Ubuntu)"
 
-    ``` bash
+    ```bash
     sudo apt install asciinema
     ```
 
 === "pacman (Arch, Manjaro)"
 
-    ``` bash
+    ```bash
     sudo pacman -S asciinema
     ```
 
 === "homebrew (macOS)"
 
-    ``` bash
+    ```bash
     brew install asciinema
+    ```
+
+=== "Cargo"
+
+    You can install latest development version with `cargo`:
+
+    ```bash
+    cargo install --locked --git https://github.com/asciinema/asciinema
     ```
 
 === "Other"

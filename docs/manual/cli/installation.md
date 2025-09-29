@@ -2,12 +2,12 @@
 
 asciinema CLI can be installed in the following ways:
 
-- using operating system's package manager on Linux, macOS, and FreeBSD -
-  search for a package named `asciinema`,
-- download a pre-built, static binary of the latest version from the
+- using a package manager on Linux, macOS, and FreeBSD - search for a package
+  named `asciinema`,
+- downloading a pre-built, static binary of the latest version from the
   [releases](https://github.com/asciinema/asciinema/releases) page,
-- use a [container image](#container-image),
-- [build from source](#from-source).
+- using a [container image](#container-image),
+- [building from source](#from-source).
 
 Older versions of asciinema (2.x) can also be obtained as the [PyPI](#pypi)
 package.
@@ -270,13 +270,19 @@ docker run --rm -it \
 
 ## From source
 
-If none of the above works for you (or you want to modify the code) then clone
-the [git repository](https://github.com/asciinema/asciinema.git) and run
-asciinema CLI straight from the checkout:
+You can build latest development version of asciinema CLI by using Rust's
+[cargo](https://github.com/rust-lang/cargo) package manager:
+
+```bash
+cargo install --locked --git https://github.com/asciinema/asciinema
+```
+
+If you'd like to modify the code, then clone the [git
+repository](https://github.com/asciinema/asciinema.git) and run asciinema CLI
+straight from the checkout:
 
 ```sh
 git clone https://github.com/asciinema/asciinema.git
 cd asciinema
-git checkout main
-python3 -m asciinema --version
+cargo run --release -- --help
 ```
