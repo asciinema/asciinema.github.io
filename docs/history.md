@@ -75,8 +75,10 @@ fact, avt has also been integrated into the asciinema server, where it's used
 for thumbnail generation and recording analysis since 2020.
 
 The final version of the asciinema CLI 2.x line, 2.4, was released in October
-2023. This was also the last version built with Python.
+2023. This was the last version built with Python.
 
-The upcoming 3.0 version of the CLI has been rewritten in Rust, introducing live
-terminal streaming. As of May 2025, the new version is in the release candidate
-stage.
+In September 2025 the brand new CLI 3.0 has been released, which was a complete
+rewrite in Rust, upgrading the recording file format to [asciicast
+v3](manual/asciicast/v3.md), introducing [terminal live
+streaming](manual/server/streaming.md), and bringing numerous improvements
+across the board.
