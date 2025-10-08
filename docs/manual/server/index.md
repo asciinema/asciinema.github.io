@@ -36,8 +36,7 @@ Notable features:
 
 - hosting of terminal session recordings in [asciicast](../asciicast/v3.md)
   format,
-- [live streaming](streaming.md) with WebSocket-based protocols for real-time
-  terminal session broadcasting,
+- [live streaming](streaming.md) of terminal sessions,
 - perfectly integrated [asciinema player](../player/index.md) for best viewing
   experience,
 - easy [sharing](sharing.md) of recordings via secret links,
@@ -48,7 +47,7 @@ Notable features:
 - editable recording metadata like title or long description (Markdown),
 - configurable terminal themes and font families (including Nerd Font
   variants),
-- download of plain text versions (`.txt`) of recordings.
+- download of plain text transcripts (`.txt`) of recordings.
 
 ---
 
