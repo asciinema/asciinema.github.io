@@ -180,6 +180,47 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 Defaults to blank terminal or, when `startAt` is specified, to screen contents
 at time specified by `startAt`.
 
+### `audioUrl`
+
+Type: string (URL)
+
+Audio file/stream to play together with the terminal session.
+
+For recorded sessions (asciicast files) the audio position is automatically
+synced with the session playback - pausing/resuming/seeking is reflected in the
+audio playback.
+
+For live terminal streams `audioUrl` is expected to be a live audio source -
+either a direct HTTP audio stream (.mp3, .aac, .ogg, etc) such as
+Icecast/Shoutcast endpoint, or HLS playlist (.m3u8).
+
+Example:
+
+```javascript title="asciicast file with audio track"
+AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
+  audioUrl: '/demo.mp3'
+});
+```
+
+```javascript title="Live terminal stream with live audio source"
+AsciinemaPlayer.create('ws://example.com/stream', document.getElementById('demo'), {
+  audioUrl: 'http://example.com/icecast/stream.ogg'
+});
+```
+
+!!! tip
+
+    Ensure the audio endpoint is configured to allow CORS requests from the
+    server providing the audio file/stream.
+
+!!! warning
+
+    When using `audioUrl` don't use `autoplay: true`. Browsers often require
+    explicit user action, such as click/tap, right before the audio playback can
+    start. With `autoplay: true` the audio is unlikely to play due to lack of user
+    action.
+
+
 ### `fit`
 
 Type: string
