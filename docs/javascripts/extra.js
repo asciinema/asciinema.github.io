@@ -196,14 +196,20 @@ document$.subscribe(function() {
 
 function createPlayer(src, containerId, opts, setup) {
   const container = document.getElementById(containerId);
+  opts = { theme: 'dracula', ...opts };
 
   if (container !== null) {
     document.fonts.load("1em Fira Mono").then(() => {
       const player = AsciinemaPlayer.create(src, container, {
-        theme: 'dracula',
         terminalFontFamily: "'Fira Mono', monospace",
         ...opts
       });
+
+      if (typeof setup === 'function') {
+        setup(player);
+      }
+    }).catch(error => {
+      const player = AsciinemaPlayer.create(src, container, opts);
 
       if (typeof setup === 'function') {
         setup(player);
