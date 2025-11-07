@@ -22,21 +22,25 @@ document$.subscribe(function() {
   }, player => {
     document.getElementById('play-button').addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       player.play();
     });
 
     document.getElementById('pause-button').addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       player.pause();
     });
 
     document.getElementById('prev-marker-button').addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       player.seek({ marker: 'prev' });
     });
 
     document.getElementById('next-marker-button').addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       player.seek({ marker: 'next' });
     });
   });
