@@ -39,6 +39,8 @@ Notable features:
 - [live streaming](streaming.md) of terminal sessions,
 - perfectly integrated [asciinema player](../player/index.md) for best viewing
   experience,
+- full-text search using recording titles, descriptions, and _full terminal
+  session content_,
 - easy [sharing](sharing.md) of recordings via secret links,
 - easy [embedding](embedding.md) of the player, or linking via preview images
   (SVG),
