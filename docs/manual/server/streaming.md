@@ -281,8 +281,8 @@ Where:
 ??? example "Example: Output "ls -la\n" after 125ms"
 
     ```
-    \x6F   \x01   \xE8\x07   \x07   ls -la\n
-    ^out   ^id1   ^125000μs  ^len   ^data
+    \x6F   \x01   \xC8\xD0\x07   \x07   ls -la\n
+    ^out   ^id1   ^125000μs      ^len   ^data
     ```
 
 **Input (0x69)** - User (keyboard) input
@@ -300,7 +300,7 @@ Where:
 ??? example "Example: Input "cd /tmp" after 50ms"
 
     ```
-    \x69   \x02   \x50\xC3\x00   \x07  cd /tmp
+    \x69   \x02   \xD0\x86\x03   \x07  cd /tmp
     ^inp   ^id2   ^50000μs       ^len  ^data
     ```
 
@@ -319,7 +319,7 @@ Where:
 ??? example "Example: Resize to 100x30 after 10ms"
 
     ```
-    \x72   \x03   \x10\x27   \x64   \x1E
+    \x72   \x03   \x90\x4E   \x64   \x1E
     ^res   ^id3   ^10000μs   ^100   ^30
     ```
 
@@ -338,8 +338,8 @@ Where:
 ??? example "Example: Marker with no label after 1s"
 
     ```
-    \x6D   \x04   \x40\x42\x0F\x00   \x00
-    ^mrk   ^id4   ^1000000μs         ^len
+    \x6D   \x04   \xC0\x84\x3D   \x00
+    ^mrk   ^id4   ^1000000μs     ^len
     ```
 
 **Exit (0x78)** - Process termination
@@ -360,8 +360,8 @@ being streamed (e.g. shell) exits.
 ??? example "Example: Exit with status 0 after 500ms"
 
     ```
-    \x78   \x05   \xA0\x86\x01\x00   \x00
-    ^exit  ^id5   ^500000μs          ^status
+    \x78   \x05   \xA0\xC2\x1E   \x00
+    ^exit  ^id5   ^500000μs      ^status
     ```
 
 **EOT (0x04)** - End of Transmission
@@ -387,7 +387,7 @@ as another WebSocket or polling).
 ??? example "Example: EOT after 1s"
 
     ```
-    \x04   \x40\x42\x0F\x00
+    \x04   \xC0\x84\x3D
     ^eot   ^1000000μs
     ```
 
