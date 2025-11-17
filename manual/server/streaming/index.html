@@ -1,0 +1,3089 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Marcin Kulik">
+      
+      
+      
+        <link rel="prev" href="../api/">
+      
+      
+        <link rel="next" href="../sharing/">
+      
+      
+      <link rel="icon" href="../../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Live streaming - asciinema docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/player-3.9.0-83ce182.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fira.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#live-streaming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="asciinema docs" class="md-header__button md-logo" aria-label="asciinema docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            asciinema docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Live streaming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/asciinema/asciinema" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../history/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../getting-started/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://blog.asciinema.org" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://discourse.asciinema.org" class="md-tabs__link">
+        
+  
+    
+  
+  Forum
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/asciinema" class="md-tabs__link">
+        
+  
+    
+  
+  Code
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="asciinema docs" class="md-nav__button md-logo" aria-label="asciinema docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    asciinema docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/asciinema/asciinema" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-it-works/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How it works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../donations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Donations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../consulting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consulting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cli/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            CLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cli/configuration/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/configuration/v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI 2.0+ configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/configuration/v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI 3.0+ configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/markers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/desktop-notifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desktop notifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../player/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    PLAYER
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            PLAYER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/loading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading a recording
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/fonts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/markers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/themes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminal themes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/parsers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parsers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../player/upgrading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SERVER
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            SERVER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../self-hosting/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Self-hosting
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Self-hosting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/upgrading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/admin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/customization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Live streaming
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Live streaming
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-stream-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live stream lifecycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alis-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ALiS v1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ALiS v1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data encoding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asciicast-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      asciicast v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asciicast-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      asciicast v3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      raw
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recording
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-user-live-stream-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-user live stream count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bandwidth limiting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embedding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../agg/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AGG
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            AGG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agg/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agg/usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    FILE FORMAT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            FILE FORMAT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asciicast/v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asciicast v3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asciicast/v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asciicast v2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asciicast/v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asciicast v1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://blog.asciinema.org" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discourse.asciinema.org" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Forum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asciinema" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-stream-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live stream lifecycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alis-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ALiS v1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ALiS v1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data encoding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asciicast-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      asciicast v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asciicast-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      asciicast v3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      raw
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recording
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-user-live-stream-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-user live stream count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bandwidth limiting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="live-streaming">Live streaming<a class="headerlink" href="#live-streaming" title="Permanent link">&para;</a></h1>
+<p>asciinema server provides real-time terminal session broadcasting with minimal
+latency, enabling live streaming of terminal sessions to multiple viewers.</p>
+<p>The streaming system supports several application-level protocols with protocol
+negotiation. For simpler clients/use-cases it provides basic protocol
+auto-detection. Streaming is subject to configurable limits including per-user
+stream count restrictions and bandwidth rate limiting.</p>
+<p>Live terminal streaming is supported by asciinema CLI since version 3.0.</p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>The live streaming architecture follows a producer-consumer model with three
+key parties:</p>
+<div class="highlight"><pre><span></span><code>                   ┌──────────────┐
+                   │   producer   │
+                   │    (CLI)     │
+                   └──────────────┘
+                          │
+                         WS
+                          │
+                          ▼
+                   ┌──────────────┐
+                   │    relay     │
+                   │   (server)   │
+                   └──────────────┘
+                    ▲      ▲      ▲
+                   /       │       \ 
+                  WS      WS       WS
+                 /         │         \
+                /          │          \
+┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+│   consumer   │   │   consumer   │   │   consumer   │
+│  (player 1)  │   │  (player 2)  │   │  (player 3)  │
+└──────────────┘   └──────────────┘   └──────────────┘
+</code></pre></div>
+<p>The producer, typically asciinema CLI, captures terminal events and streams
+them to the producer endpoint (<code>/ws/S/&lt;producer-token&gt;</code>) on the server.</p>
+<p>The server acts as a relay, receiving events from producers and distributing
+them to consumers while maintaining the complete stream state.</p>
+<p>Consumers, such as asciinema player, connect to the consumer endpoint
+(<code>/ws/s/&lt;public-token&gt;</code>) on the server to receive real-time terminal events and
+display the live session.</p>
+<p>Both producer and consumer connections utilize WebSocket transport,
+implementing application-level protocols (WebSocket sub-protocols) for event
+transmission.</p>
+<p>The server maintains comprehensive state for each active stream by running the
+whole stream through <a href="https://github.com/asciinema/avt">asciinema's own virtual terminal
+emulator</a>. This enables new consumers to
+connect mid-stream and immediately receive the current terminal view, ensuring
+a seamless viewing experience regardless of when viewers join the session.</p>
+<h2 id="live-stream-lifecycle">Live stream lifecycle<a class="headerlink" href="#live-stream-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Before the producer can start sending stream events to the producer WebSocket
+endpoint, streams must be created and configured through the <a href="../api/">HTTP
+API</a>. This two-phase approach separates stream management from
+real-time data transmission.</p>
+<p>The flow is as follows:</p>
+<ol>
+<li><a href="../api/#create_1">create</a> or <a href="../api/#update_1">update</a> a stream with the
+   HTTP API, setting <code>{ "live": true }</code></li>
+<li>extract <code>ws_producer_url</code> from the JSON response</li>
+<li>open WebSocket connection to <code>ws_producer_url</code></li>
+<li>start sending terminal session events as WebSocket messages, encoded for the
+   selected sub-protocol (see <a href="#protocols">Protocols</a> section below)</li>
+</ol>
+<p><strong>Marking a stream "live" is required for the producer endpoint to accept a
+WebSocket connection.</strong></p>
+<p>The creation/update of a live stream (<code>{ "live": true }</code>) in the API may
+fail if given user's live stream limit has already been reached. See
+<a href="#limits">Limits</a> below.</p>
+<p>When the WebSocket connection is closed gracefully, the server automatically
+marks the stream "dead" (<code>{ "live": false }</code>).</p>
+<p>When the connection is closed abruptly (e.g. a network issue), the server keeps
+the stream "live" for 60 sec, giving the producer grace time to reconnect
+before marking the stream "dead".</p>
+<p>After stream ends, if <a href="#recording">stream recording</a> is enabled, a new
+recording is automatically created.</p>
+<details class="example">
+<summary>Example: creating a new stream and sending events</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">JavaScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">websocket</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1"># Step 1: Create/update stream with HTTP API</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;your-cli-token&quot;</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;:</span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://asciinema.org/api/v1/streams&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Basic </span><span class="si">{</span><span class="n">auth</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;live&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;It&#39;s alive!&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 2: Extract ws_producer_url</span>
+<span class="n">stream_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">ws_url</span> <span class="o">=</span> <span class="n">stream_data</span><span class="p">[</span><span class="s2">&quot;ws_producer_url&quot;</span><span class="p">]</span>
+
+<span class="c1"># Step 3: Open WebSocket connection</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">websocket</span><span class="o">.</span><span class="n">WebSocket</span><span class="p">()</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ws_url</span><span class="p">,</span> <span class="n">subprotocols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;v3.asciicast&quot;</span><span class="p">])</span>
+
+<span class="c1"># Step 4: Send terminal events (asciicast v3 format)</span>
+<span class="c1"># Header message</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;term&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;cols&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">}}</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+
+<span class="c1"># Output event (1.0 second interval, output type, data)</span>
+<span class="n">output_event</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello, World!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">output_event</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">WebSocket</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;ws&#39;</span><span class="p">;</span>
+
+<span class="c1">// Step 1: Create/update stream with HTTP API</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;your-cli-token&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="sb">`:</span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://asciinema.org/api/v1/streams&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`Basic </span><span class="si">${</span><span class="nx">auth</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">live</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;It&#39;s alive!&quot;</span><span class="w"> </span><span class="p">})</span>
+<span class="p">});</span>
+
+<span class="c1">// Step 2: Extract ws_producer_url</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">streamData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wsUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">streamData</span><span class="p">.</span><span class="nx">ws_producer_url</span><span class="p">;</span>
+
+<span class="c1">// Step 3: Open WebSocket connection</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="nx">wsUrl</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;v3.asciicast&#39;</span><span class="p">]);</span>
+
+<span class="c1">// Step 4: Send terminal events (asciicast v3 format)</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Header message</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;term&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;cols&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rows&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">24</span><span class="p">}};</span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">header</span><span class="p">));</span>
+
+<span class="w">    </span><span class="c1">// Output event (1.0 second interval, output type, data)</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">outputEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello, World!\n&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">outputEvent</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="protocols">Protocols<a class="headerlink" href="#protocols" title="Permanent link">&para;</a></h2>
+<p>There are several WebSocket-based protocols for different client capabilities and use cases:</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Transport</th>
+<th>Sec-WebSocket-Protocol name</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ALiS v1</strong></td>
+<td>binary WebSocket</td>
+<td><code>v1.alis</code></td>
+<td>Full-featured, lean, precise timing</td>
+</tr>
+<tr>
+<td><strong>asciicast v2</strong></td>
+<td>text WebSocket</td>
+<td><code>v2.asciicast</code></td>
+<td>Full-featured, heavy, precise timing, easy to implement</td>
+</tr>
+<tr>
+<td><strong>asciicast v3</strong></td>
+<td>text WebSocket</td>
+<td><code>v3.asciicast</code></td>
+<td>Full-featured, heavy, precise timing, easy to implement</td>
+</tr>
+<tr>
+<td><strong>raw</strong></td>
+<td>binary WebSocket</td>
+<td><code>raw</code></td>
+<td>Output-only, the leanest, no resize and other events, no accurate timing, easy to implement</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We call them "protocols" because they're negotiated using standard
+<code>Sec-WebSocket-Protocol</code> header, but in practice they're just serialization
+formats as they're uni-directional.</p>
+</div>
+<p>The producer endpoint supports all of the above. The consumer endpoint supports
+<code>ALiS v1</code> only  given its primary client is asciinema player, which has full
+support for this protocol.</p>
+<p>Upon connection a protocol is negotiated using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-WebSocket-Protocol">Sec-WebSocket-Protocol
+header</a>.</p>
+<p>If no <code>Sec-WebSocket-Protocol</code> header is provided by the client, the producer
+endpoint tries to detect the protocol from the first received message, falling
+back to <code>raw</code> if its heuristics fail.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Consumers always receive ALiS v1 encoded stream regardless of the protocol
+the producer uses. The server handles protocol translation transparently.</p>
+</div>
+<h3 id="alis-v1">ALiS v1<a class="headerlink" href="#alis-v1" title="Permanent link">&para;</a></h3>
+<p>ALiS (Asciinema Live Stream) is the primary binary protocol supporting all
+session event types, while being lightweight on the wire. It's supported by
+asciinema CLI, server and player.</p>
+<p>Conceptually it's based on asciicast v3, but it's leaner and optimized for low
+latency live streaming.</p>
+<h4 id="data-encoding">Data encoding<a class="headerlink" href="#data-encoding" title="Permanent link">&para;</a></h4>
+<p>ALiS uses <a href="https://en.wikipedia.org/wiki/LEB128">LEB128</a> (Little Endian Base
+128) encoding for all integers to minimize bandwidth. Currently only unsigned
+integers are in use by the protocol, so in practice it uses Unsigned LEB128
+only.</p>
+<p>All text data uses UTF-8 encoding with length prefix:</p>
+<div class="highlight"><pre><span></span><code>String := [Length: LEB128][Data: UTF-8 bytes]
+</code></pre></div>
+<h4 id="stream-structure">Stream structure<a class="headerlink" href="#stream-structure" title="Permanent link">&para;</a></h4>
+<p>The very first binary message sent right after opening a connection must be the
+5 byte magic string:</p>
+<p><code>[0x41, 0x4C, 0x69, 0x53, 0x01]</code> - <code>"ALiS\x01"</code> in ASCII.</p>
+<p>The messages following it represent an event stream. Each binary WebSocket
+message encodes a separate event:</p>
+<div class="highlight"><pre><span></span><code>Event  := [EventType: uint8][EventData]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>EventType:</strong> one of event types listed below</li>
+<li><strong>EventData:</strong> event type specific payload</li>
+</ul>
+<h4 id="event-types">Event types<a class="headerlink" href="#event-types" title="Permanent link">&para;</a></h4>
+<p><strong>Init (0x01)</strong> - Initialize or reset stream state</p>
+<div class="highlight"><pre><span></span><code>[0x01][LastId: LEB128][Time: LEB128][Cols: LEB128][Rows: LEB128][Theme][InitData: String]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>LastId:</strong> event sequence number for synchronization</li>
+<li><strong>RelTime:</strong> microseconds since the stream start (typically 0, may be positive when joining a stream as a consumer later)</li>
+<li><strong>Cols/Rows:</strong> terminal size</li>
+<li><strong>Theme:</strong> color theme (see Theme below)</li>
+<li><strong>InitData:</strong> optional pre-existing terminal content, to bring the consumer up to speed with terminal state</li>
+</ul>
+<p>This event type is conceptually similar to the header in asciicast file format.</p>
+<details class="example">
+<summary>Example: Init with 80x24 terminal, no theme, "Hello!" initial data</summary>
+<div class="highlight"><pre><span></span><code>\x01   \x00   \x00   \x50   \x18   \x00   \x06  Hello!
+^init  ^id    ^time  ^80    ^24    ^theme ^len  ^data
+</code></pre></div>
+</details>
+<p><strong>Output (0x6F)</strong> - Terminal output</p>
+<div class="highlight"><pre><span></span><code>[0x6F][Id: LEB128][RelTime: LEB128][Data: String]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>Id:</strong> event sequence number</li>
+<li><strong>RelTime:</strong> microseconds since last event</li>
+<li><strong>Data:</strong> terminal output text</li>
+</ul>
+<details class="example">
+<summary>Example: Output "ls -la\n" after 125ms</summary>
+<div class="highlight"><pre><span></span><code>\x6F   \x01   \xE8\x07   \x07   ls -la\n
+^out   ^id1   ^125000μs  ^len   ^data
+</code></pre></div>
+</details>
+<p><strong>Input (0x69)</strong> - User (keyboard) input</p>
+<div class="highlight"><pre><span></span><code>[0x69][Id: LEB128][RelTime: LEB128][Data: String]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>Id:</strong> event sequence number  </li>
+<li><strong>RelTime:</strong> microseconds since last event</li>
+<li><strong>Data:</strong> user input text</li>
+</ul>
+<details class="example">
+<summary>Example: Input "cd /tmp" after 50ms</summary>
+<div class="highlight"><pre><span></span><code>\x69   \x02   \x50\xC3\x00   \x07  cd /tmp
+^inp   ^id2   ^50000μs       ^len  ^data
+</code></pre></div>
+</details>
+<p><strong>Resize (0x72)</strong> - Terminal window resize</p>
+<div class="highlight"><pre><span></span><code>[0x72][Id: LEB128][RelTime: LEB128][Cols: LEB128][Rows: LEB128]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>Id:</strong> event sequence number</li>
+<li><strong>RelTime:</strong> microseconds since last event</li>
+<li><strong>Cols/Rows:</strong> new terminal size</li>
+</ul>
+<details class="example">
+<summary>Example: Resize to 100x30 after 10ms</summary>
+<div class="highlight"><pre><span></span><code>\x72   \x03   \x10\x27   \x64   \x1E
+^res   ^id3   ^10000μs   ^100   ^30
+</code></pre></div>
+</details>
+<p><strong>Marker (0x6D)</strong> - Session annotations / bookmarking</p>
+<div class="highlight"><pre><span></span><code>[0x6D][Id: LEB128][RelTime: LEB128][Label: String]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>Id:</strong> event sequence number</li>
+<li><strong>RelTime:</strong> microseconds since last event</li>
+<li><strong>Label:</strong> human-readable marker description</li>
+</ul>
+<details class="example">
+<summary>Example: Marker with no label after 1s</summary>
+<div class="highlight"><pre><span></span><code>\x6D   \x04   \x40\x42\x0F\x00   \x00
+^mrk   ^id4   ^1000000μs         ^len
+</code></pre></div>
+</details>
+<p><strong>Exit (0x78)</strong> - Process termination</p>
+<div class="highlight"><pre><span></span><code>[0x78][Id: LEB128][RelTime: LEB128][Status: LEB128]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>Id:</strong> event sequence number</li>
+<li><strong>RelTime:</strong> microseconds since last event  </li>
+<li><strong>Status:</strong> exit status code (non-negative)</li>
+</ul>
+<p>This event is typically sent as the last stream event, once the process that's
+being streamed (e.g. shell) exits.</p>
+<details class="example">
+<summary>Example: Exit with status 0 after 500ms</summary>
+<div class="highlight"><pre><span></span><code>\x78   \x05   \xA0\x86\x01\x00   \x00
+^exit  ^id5   ^500000μs          ^status
+</code></pre></div>
+</details>
+<p><strong>EOT (0x04)</strong> - End of Transmission</p>
+<div class="highlight"><pre><span></span><code>[0x04][RelTime: LEB128]
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><strong>RelTime:</strong> microseconds since last event</li>
+</ul>
+<p>This event may be used to signal the stream end without closing the connection.
+Once EOT is received, the connection state goes back to post-magic-string
+pre-init state, expecting Init event to restart the stream from scratch.</p>
+<p>It's sent from the consumer endpoint whenever a producer ends the stream. This
+allows asciinema player (consumer) to keep the connection open and be ready for
+instant stream restart. This approach eliminates the need for an additional
+channel between the server and the consumer for checking stream liveness (such
+as another WebSocket or polling).</p>
+<details class="example">
+<summary>Example: EOT after 1s</summary>
+<div class="highlight"><pre><span></span><code>\x04   \x40\x42\x0F\x00
+^eot   ^1000000μs
+</code></pre></div>
+</details>
+<h4 id="theme">Theme<a class="headerlink" href="#theme" title="Permanent link">&para;</a></h4>
+<p>Terminal theme is encoded as follows:</p>
+<div class="highlight"><pre><span></span><code>Theme := [Format: uint8][ColorData?]
+</code></pre></div>
+<p>Where <strong>Format</strong> determines the presence and structure of <strong>ColorData</strong>:</p>
+<ul>
+<li><strong><code>0x00</code></strong> (no theme): no ColorData follows, only the format byte</li>
+<li><strong><code>0x08</code></strong> (8-color palette): ColorData with 8-color palette</li>
+<li><strong><code>0x10</code></strong> (16-color palette): ColorData with 16-color palette</li>
+</ul>
+<p>When ColorData is present (format <code>0x08</code> or <code>0x10</code>):</p>
+<div class="highlight"><pre><span></span><code>ColorData := [Fg: RGB][Bg: RGB][Palette: N×RGB]
+RGB := [R: uint8][G: uint8][B: uint8]
+</code></pre></div>
+<p>Where <strong>N</strong> is 8 or 16 depending on format identifier.</p>
+<details class="example">
+<summary>Theme examples</summary>
+<p><strong>No theme (format 0x00):</strong></p>
+<div class="highlight"><pre><span></span><code>\x00
+^no theme
+</code></pre></div>
+<p><strong>8-color palette (format 0x08):</strong></p>
+<div class="highlight"><pre><span></span><code>\x08   \xD0\xD0\xD0   \x1C\x1C\x1C   \x00\x00\x00\xFF\x00\x00 ... (6 more colors)
+^8col  ^fg(gray)      ^bg(dark)      ^palette                 ...
+</code></pre></div>
+<p><strong>16-color palette (format 0x10):</strong></p>
+<div class="highlight"><pre><span></span><code>\x10   \xD0\xD0\xD0   \x1C\x1C\x1C   \x00\x00\x00\xFF\x00\x00 ... (14 more colors)
+^16col ^fg(gray)      ^bg(dark)      ^palette                  ...
+</code></pre></div>
+</details>
+<h3 id="asciicast-v2">asciicast v2<a class="headerlink" href="#asciicast-v2" title="Permanent link">&para;</a></h3>
+<p>This is just <a href="../../asciicast/v2/">asciicast v2 file format</a> sent via
+WebSocket, where each line is delivered as a separate text message.</p>
+<p>It's simple, so creating a client is rather easy. However, it's much more
+bandwidth heavy than ALiS, and it doesn't provide a mechanism to sync the
+server with the client's recent state upon re-connections (like ALiS does).</p>
+<details class="example">
+<summary>Example: asciicast v2 streaming with asciinema 2.x and websocat</summary>
+<p>This is an example of streaming with asciinema CLI 2.x, which doesn't natively
+support streaming. Thankfully, it writes recordings in asciicast v2 format!</p>
+<p>The example also uses <code>curl</code>, <code>jq</code> and <code>websocat</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># obtain install ID</span>
+<span class="nv">INSTALL_ID</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>~/.config/asciinema/install-id<span class="k">)</span>
+
+<span class="c1"># create stream and capture JSON response</span>
+<span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;:</span><span class="si">${</span><span class="nv">INSTALL_ID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;live&quot;: true}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://asciinema.org/api/v1/streams<span class="k">)</span>
+
+<span class="c1"># extract WebSocket producer URL</span>
+<span class="nv">url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$response</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.ws_producer_url&#39;</span><span class="k">)</span>
+
+<span class="c1"># create named pipe, for connecting the CLI with websocat</span>
+mkfifo<span class="w"> </span>live.fifo
+
+<span class="c1"># run websocat to stream from the pipe to the producer URL</span>
+websocat<span class="w"> </span>--text<span class="w"> </span><span class="nv">$url</span><span class="w"> </span>&lt;<span class="w"> </span>live.fifo
+
+<span class="c1"># in another terminal start asciinema recording session</span>
+asciinema<span class="w"> </span>rec<span class="w"> </span>live.fifo
+</code></pre></div>
+</details>
+<h3 id="asciicast-v3">asciicast v3<a class="headerlink" href="#asciicast-v3" title="Permanent link">&para;</a></h3>
+<p>This is just <a href="../../asciicast/v3/">asciicast v3 file format</a> sent via
+WebSocket, where each line is delivered as a separate text message.</p>
+<p>Same pros/cons as mentioned for v2 apply here.</p>
+<details class="example">
+<summary>Example: asciicast v3 streaming with asciinema 3.x and websocat</summary>
+<p>This is an example of alternative way of streaming with asciinema CLI 3.x.
+CLI 3.0+ supports streaming natively using ALiS protocol (<code>asciinema stream</code> /
+<code>asciinema session</code>), which should be always preferred.</p>
+<p>Here is just an example of feeding asciicast v3 stream into the producer
+endpoint. The example also uses <code>curl</code>, <code>jq</code> and <code>websocat</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># obtain install ID</span>
+<span class="nv">INSTALL_ID</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>~/.config/asciinema/install-id<span class="k">)</span>
+
+<span class="c1"># create stream and capture JSON response</span>
+<span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;:</span><span class="si">${</span><span class="nv">INSTALL_ID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;live&quot;: true}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://asciinema.org/api/v1/streams<span class="k">)</span>
+
+<span class="c1"># extract WebSocket producer URL</span>
+<span class="nv">url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$response</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.ws_producer_url&#39;</span><span class="k">)</span>
+
+<span class="c1"># create named pipe, for connecting the CLI with websocat</span>
+mkfifo<span class="w"> </span>live.fifo
+
+<span class="c1"># run websocat to stream from the pipe to the producer URL</span>
+websocat<span class="w"> </span>--text<span class="w"> </span><span class="nv">$url</span><span class="w"> </span>&lt;<span class="w"> </span>live.fifo
+
+<span class="c1"># in another terminal start asciinema recording session</span>
+asciinema<span class="w"> </span>rec<span class="w"> </span>-f<span class="w"> </span>asciicast-v3<span class="w"> </span>live.fifo
+</code></pre></div>
+</details>
+<h3 id="raw">raw<a class="headerlink" href="#raw" title="Permanent link">&para;</a></h3>
+<p>This protocol is just raw binary messages representing direct terminal output,
+without any additional encoding/metadata.</p>
+<p>The whole binary stream is treated as session output to be fed into a terminal.
+That includes both printable characters and control sequences.</p>
+<p>There's no support for input, resize, marker and other event types. Terminal
+theme reproduction is also not possible when using this protocol.</p>
+<p>Given the messages don't include timing information, server-side time of
+arrival is used for timing each output event. That means, the original
+fine-grained timing of the session is lost, and playback smoothness is highly
+susceptible to network conditions.</p>
+<p>The terminal size is assumed to be 80x24. However, the <strong>first</strong> received
+message is inspected for size hints.</p>
+<p>If the escape sequence <code>\e[8;Y;Xt</code> is found then <code>Y</code> is assumed to be terminal
+height in rows, and <code>X</code> is assumed to be terminal width in columns. This
+sequence is injected by <a href="https://angband.pl/termrec.html">termrec</a> for example.</p>
+<p>Another size hint that the server looks for is
+<a href="https://www.man7.org/linux/man-pages/man1/script.1.html">script</a> start
+message, which typically includes <code>COLUMNS=".." LINES=".."</code>.</p>
+<details class="example">
+<summary>Example: raw streaming with script and websocat</summary>
+<p>This is an example of streaming with
+<a href="https://www.man7.org/linux/man-pages/man1/script.1.html">script</a>. <code>script</code>
+writes the captured terminal output as raw, binary data. The example also uses
+<code>curl</code>, <code>jq</code> and <code>websocat</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># obtain install ID</span>
+<span class="nv">INSTALL_ID</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>~/.config/asciinema/install-id<span class="k">)</span>
+
+<span class="c1"># create stream and capture JSON response</span>
+<span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;:</span><span class="si">${</span><span class="nv">INSTALL_ID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;live&quot;: true}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://asciinema.org/api/v1/streams<span class="k">)</span>
+
+<span class="c1"># extract WebSocket producer URL</span>
+<span class="nv">url</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$response</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.ws_producer_url&#39;</span><span class="k">)</span>
+
+<span class="c1"># create named pipe, for connecting the CLI with websocat</span>
+mkfifo<span class="w"> </span>live.fifo
+
+<span class="c1"># run websocat to stream from the pipe to the producer URL</span>
+websocat<span class="w"> </span>--binary<span class="w"> </span><span class="nv">$url</span><span class="w"> </span>&lt;<span class="w"> </span>live.fifo
+
+<span class="c1"># in another terminal start recording with script</span>
+script<span class="w"> </span>-f<span class="w"> </span>-O<span class="w"> </span>live.fifo
+</code></pre></div>
+</details>
+<h2 id="recording">Recording<a class="headerlink" href="#recording" title="Permanent link">&para;</a></h2>
+<p>asciinema server can automatically record every live stream, converting them
+into regular recordings that can be replayed later. This allows streams to
+serve dual purposes: real-time broadcasting and permanent archival.</p>
+<p>Recording behavior is controlled by the <code>STREAM_RECORDING</code> environment
+variable.</p>
+<p>When recording is enabled, the complete terminal session is captured and stored
+as a regular recording.</p>
+<p>Recent recordings made from a stream are listed on a given stream page. All
+stream recordings are accessible from user profile page (visibility subject to
+related settings in user account).</p>
+<p>For detailed configuration options, see the
+<a href="../self-hosting/configuration/#stream-recording">Configuration</a> documentation.</p>
+<details class="info">
+<summary>Stream recording on asciinema.org</summary>
+<p>Currently, stream recording is disabled on asciinema.org.</p>
+</details>
+<h2 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h2>
+<p>The streaming system enforces two types of limits to manage server resources and prevent abuse:</p>
+<h3 id="per-user-live-stream-count">Per-user live stream count<a class="headerlink" href="#per-user-live-stream-count" title="Permanent link">&para;</a></h3>
+<p>By default, users can create unlimited number of streams. This can be
+restricted system-wide through use <code>DEFAULT_STREAM_LIMIT</code> config option (see
+the <a href="../self-hosting/configuration/#stream-limit">Configuration</a> documentation),
+and individually per-user in the admin panel.</p>
+<details class="info">
+<summary>Live streams limit on asciinema.org</summary>
+<p>Currently, per-user live stream limit on asciinema.org is <strong>1</strong>.</p>
+</details>
+<h3 id="bandwidth-limiting">Bandwidth limiting<a class="headerlink" href="#bandwidth-limiting" title="Permanent link">&para;</a></h3>
+<p>Each producer connection is subject to bandwidth rate limiting using <a href="https://en.wikipedia.org/wiki/Token_bucket">token
+bucket algorithm</a> to prevent
+individual connections from overwhelming the server while maintaining fair
+resource allocation across all active streams.</p>
+<p>The algorithm is configured such that:</p>
+<ul>
+<li>1 token == 1 byte of each received WebSocket message</li>
+<li>bucket size (capacity per connection) is 60 000 000 (60 MB) - this is maximum and initial value</li>
+<li>every 100 milliseconds the bucket is refilled with 10 000 tokens</li>
+</ul>
+<p>This gives headroom for short bursts, and allows sustained bandwidth of 100 KB/s.</p>
+<p>When the token bucket is exhausted, the connection is closed with error code
+4004 ("Bandwidth Exceeded").</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: API">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                API
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sharing/" class="md-footer__link md-footer__link--next" aria-label="Next: Sharing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Sharing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Marcin Kulik
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/asciinema" target="_blank" rel="noopener" title="asciinema on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+    <a href="https://fosstodon.org/@asciinema" target="_blank" rel="noopener me" title="asciinema on Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5m-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/asciinema" target="_blank" rel="noopener" title="asciinema on X (Twitter)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/player-3.9.0-83ce182.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
