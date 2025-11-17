@@ -241,7 +241,7 @@ R2](https://www.cloudflare.com/developer-platform/r2/), or a self-hosted
 ### Local filesystem
 
 With the local filesystem used as the file store, the files are saved in
-`/var/opt/asciinema`. Mapping this directory to a volume is necessary for data
+`/var/lib/asciinema`. Mapping this directory to a volume is necessary for data
 persistence:
 
 ```yaml title="docker-compose.yml"
@@ -249,7 +249,7 @@ services:
   asciinema:
     # ...
     volumes:
-      - asciinema_data:/var/opt/asciinema
+      - asciinema_data:/var/lib/asciinema
 
 volumes:
   asciinema_data:
@@ -262,7 +262,7 @@ services:
   asciinema:
     # ...
     volumes:
-      - /path/to/asciinema/data:/var/opt/asciinema
+      - /path/to/asciinema/data:/var/lib/asciinema
 ```
 
 !!! tip
@@ -645,7 +645,7 @@ services:
   asciinema:
     # ...
     volumes:
-      - asciinema_data:/var/opt/asciinema
+      - asciinema_data:/var/lib/asciinema
       - ./custom.exs:/opt/app/etc/custom.exs
     # ...
 ```

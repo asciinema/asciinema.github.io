@@ -26,7 +26,7 @@ a template.
     ```yaml title="docker-compose.yml"
     services:
       asciinema:
-        image: ghcr.io/asciinema/asciinema-server:20250915
+        image: ghcr.io/asciinema/asciinema-server:20251114
         environment:
           - SECRET_KEY_BASE=  # <- see below
           - URL_HOST=asciinema.example.com
@@ -35,7 +35,7 @@ a template.
           - SMTP_USERNAME=foobar
           - SMTP_PASSWORD=hunter2
         volumes:
-          - asciinema_data:/var/opt/asciinema
+          - asciinema_data:/var/lib/asciinema
         depends_on:
           postgres:
             condition: service_healthy
@@ -75,7 +75,7 @@ a template.
     ```yaml title="docker-compose.yml"
     services:
       asciinema:
-        image: ghcr.io/asciinema/asciinema-server:20250915
+        image: ghcr.io/asciinema/asciinema-server:20251114
         ports:
           - '80:4000'
         environment:
@@ -86,7 +86,7 @@ a template.
           - SMTP_USERNAME=foobar
           - SMTP_PASSWORD=hunter2
         volumes:
-          - asciinema_data:/var/opt/asciinema
+          - asciinema_data:/var/lib/asciinema
         depends_on:
           postgres:
             condition: service_healthy
@@ -137,9 +137,9 @@ the login page. Check [email configuration](configuration.md#email) for more
 details, including configuration examples for popular SMTP providers.
 
 The server stores the uploaded recordings and other data at
-`/var/opt/asciinema`. We used volume mapping for this directory, but you can
+`/var/lib/asciinema`. We used volume mapping for this directory, but you can
 also bind-mount it to a directory on the host system, e.g.
-`/path/to/asciinema/data:/var/opt/asciinema`, or use S3-compatible object store
+`/path/to/asciinema/data:/var/lib/asciinema`, or use S3-compatible object store
 instead. Check [file store configuration](configuration.md#file-store) for
 details.
 

@@ -220,7 +220,7 @@ services:
     ports:
       - '4000:4000'
     volumes:
-      - asciinema_data:/var/opt/asciinema
+      - asciinema_data:/var/lib/asciinema
     depends_on:
       postgres:
         condition: service_healthy
