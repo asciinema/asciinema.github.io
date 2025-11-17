@@ -110,7 +110,7 @@ a template.
 
 Let's break it down.
 
-The `asciinema` container uses a server image version tagged `20250915`. This is
+The `asciinema` container uses a server image version tagged `20251114`. This is
 merely an example; please check the
 [releases](https://github.com/asciinema/asciinema-server/releases) page for the
 latest stable version number and use that instead.
