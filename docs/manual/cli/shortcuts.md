@@ -16,7 +16,7 @@ shortcut | action | 3.x config file option | 2.x config file option | notes
 ---------|--------|---------------|------|---
 <kbd>ctrl+\</kbd> | toggle the capture of a terminal | `recording.pause_key` | `rec.pause_key` | similar to "mute" on an audio call
 <kbd>ctrl+d</kbd> | end the recording session | - | - |  this is handled by a shell
-- | add a [marker](markers.md) | `recording.add_marker_key` | `rec.add_marker_key` | no default shortcut for this
+- | add a [marker](markers.md) | `session.add_marker_key` | `record.add_marker_key` | no default shortcut for this
 
 ## Playback shortcuts
 
