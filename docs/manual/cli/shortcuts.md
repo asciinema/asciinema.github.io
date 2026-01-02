@@ -62,3 +62,22 @@ enabled.
     2. There's no prefix key concept for the `play` command because there's no
     interactive process to forward the key presses during the playback, and
     therefore no risk of shortcut conflicts.
+
+## Marker shortcut
+
+You can define a shortcut to add [markers](markers.md) during a recording (no default defined).
+For example, to add the `ctrl+x` shortcut:
+
+=== "CLI 3.0+"
+
+    ```toml title="~/.config/asciinema/config.toml"
+    [session]
+    add_marker_key = "^x"
+    ```
+
+=== "CLI 2.0+"
+
+    ```ini title="~/.config/asciinema/config"
+    [record]
+    prefix_key = C-x
+    ```
