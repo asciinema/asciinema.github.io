@@ -31,8 +31,7 @@ shortcut | action | 3.x config file option | 2.x config file option | notes
 
 ## Prefix key
 
-You can define a "prefix key" for the recording shortcuts with `rec.prefix_key`
-option in the config file:
+You can define a "prefix key" for the recording shortcuts in the [config file](configuration/index.md):
 
 === "CLI 3.0+"
 
@@ -66,7 +65,7 @@ enabled.
 ## Marker shortcut
 
 You can define a shortcut to add [markers](markers.md) during a recording (no default defined).
-For example, to add the `ctrl+x` shortcut:
+For example, to add the `ctrl+x` shortcut to the [config file](configuration/index.md):
 
 === "CLI 3.0+"
 
