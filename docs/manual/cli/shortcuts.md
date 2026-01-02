@@ -37,14 +37,14 @@ option in the config file:
 === "CLI 3.0+"
 
     ```toml title="~/.config/asciinema/config.toml"
-    [recording]
+    [session]
     prefix_key = "C-a"
     ```
 
 === "CLI 2.0+"
 
     ```ini title="~/.config/asciinema/config"
-    [rec]
+    [record]
     prefix_key = C-a
     ```
 
