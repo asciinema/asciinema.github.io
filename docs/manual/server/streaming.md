@@ -374,15 +374,12 @@ Where:
 
 - **RelTime:** microseconds since last event
 
-This event may be used to signal the stream end without closing the connection.
-Once EOT is received, the connection state goes back to post-magic-string
-pre-init state, expecting Init event to restart the stream from scratch.
+This event should be used to signal streaming session end. It's typically sent
+as the last event before closing the connection.
 
-It's sent from the consumer endpoint whenever a producer ends the stream. This
-allows asciinema player (consumer) to keep the connection open and be ready for
-instant stream restart. This approach eliminates the need for an additional
-channel between the server and the consumer for checking stream liveness (such
-as another WebSocket or polling).
+The connection may be reused for another session. In such case once EOT is
+received, the parser/decoder state must go back to post-magic-string pre-init
+state, expecting Init event to restart the stream from scratch.
 
 ??? example "Example: EOT after 1s"
 
@@ -390,6 +387,14 @@ as another WebSocket or polling).
     \x04   \x40\x42\x0F\x00
     ^eot   ^1000000μs
     ```
+
+??? info "EOT and asciinema player"
+
+    EOT is sent from the consumer endpoint whenever a producer ends the stream. This
+    allows asciinema player (consumer) to keep the connection open and be ready for
+    instant stream restart. This approach eliminates the need for an additional
+    channel between the server and the consumer for checking stream liveness (such
+    as another WebSocket or polling).
 
 #### Theme
 
