@@ -108,7 +108,7 @@ and `theme` options like this:
 ```javascript
 AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
   loop: true,
-  theme: 'dracula'
+  theme: 'solarized-dark'
 });
 ```
 
