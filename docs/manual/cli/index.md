@@ -44,7 +44,7 @@ Notable features:
 - local and remote [live streaming](quick-start.md#stream-a-terminal-session)
   of terminal sessions to multiple viewers in real-time,
 - [lightweight recording format](../asciicast/v3.md), which is highly
-  compressible (down to 15% of the original size e.g. with `zstd` or `gzip`),
+  compressible (8% of the original size with `gzip` on average),
 - integration with [asciinema server](../server/index.md), e.g.
   [asciinema.org](https://asciinema.org), for easy recording hosting and live
   streaming.
