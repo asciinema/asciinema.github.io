@@ -49,8 +49,10 @@ Example recording model:
   events: [
     [1.0, 'o', 'hello '],
     [2.0, 'o', 'world!'],
+    [3.5, 'r', '132x43'],
     [4.0, 'i', '\u0004'],
-    [4.1, 'o', 'exit']
+    [4.1, 'm', 'Done'],
+    [4.2, 'o', 'exit']
   ]
 }
 ```
@@ -60,6 +62,7 @@ are:
 
 - `o` - output, i.e a write to a terminal
 - `i` - input, typically a key press
+- `r` - terminal resize, encoded as `"COLSxROWS"`
 - `m` - [marker](markers.md)
 
 ## Built-in parsers
@@ -169,9 +172,13 @@ Custom format parser can be used by setting the `parser` option to a _function_:
 AsciinemaPlayer.create({ url: url, parser: myParserFunction }, containerElement);
 ```
 
-Custom parser function takes a [Response
-object](https://developer.mozilla.org/en-US/docs/Web/API/Response) and returns
-an object conforming to the [recording data model](#data-model-of-a-recording).
+Custom parser function returns an object conforming to the [recording data
+model](#data-model-of-a-recording).
+
+When used with `{ url: ... }` source it receives a [Response
+object](https://developer.mozilla.org/en-US/docs/Web/API/Response). When used
+with `{ data: ... }` source it receives the resolved `data` value, which may be
+a `Response` object or any other value accepted by the parser.
 
 !!! note
 
