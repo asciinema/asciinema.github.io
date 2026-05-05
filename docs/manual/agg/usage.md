@@ -6,8 +6,8 @@
 agg demo.cast demo.gif
 ```
 
-The above command renders a GIF file with default theme (dracula), font size
-14px.
+The above command renders a GIF with the default theme (dracula), 16px font
+size, and the swash renderer.
 
 You can also provide an asciinema.org URL as the first argument:
 
@@ -15,8 +15,14 @@ You can also provide an asciinema.org URL as the first argument:
 agg https://asciinema.org/a/569727 starwars.gif
 ```
 
+Or pipe an asciicast on standard input by using `-` as the input filename:
+
+```bash
+cat demo.cast | agg - demo.gif
+```
+
 Additional options are available for customization. For example, the following
-command selects Monokai theme, larger font size, 2x playback speed:
+command selects the Monokai theme, a larger font size, and 2× playback speed:
 
 ```bash
 agg --theme monokai --font-size 20 --speed 2 demo.cast demo.gif
@@ -24,90 +30,33 @@ agg --theme monokai --font-size 20 --speed 2 demo.cast demo.gif
 
 Run `agg -h` to see all available options.
 
-## Fonts
-
-By default agg uses common monospaced font for a given platform, that can be
-found on its default font family list. The list includes DejaVu Sans Mono and
-Liberation Mono (found on most Linux distros), SF Mono and Menlo (found on
-macOS), Consolas (found on Windows), with addition of my personal favourites
-like JetBrains Mono and Fira Code. The fonts are not included in agg and must be
-present on the system. To see the default value run `agg --help` and look for
-`--font-family`. In addition there's implicit fallback to DejaVu Sans (not Mono)
-which helps with rendering symbols like ⣽ or ✔ amongst others.
-
-If you want to use another font family then pass a comma-separated list like
-this:
-
-```bash
-agg --font-family "Source Code Pro,Fira Code" demo.cast demo.gif
-```
-
-As long as the fonts you want to use are installed in one of standard system
-locations (e.g. /usr/share/fonts or ~/.local/share/fonts on Linux) agg will find
-them. You can also use `--font-dir=/path/to/fonts` option to include extra
-fonts. `--font-dir` can be specified multiple times.
-
-To verify agg picks up your font run it with `-v` (verbose) flag:
-
-```bash
-agg -v --font-family "Source Code Pro,Fira Code" demo.cast demo.gif
-```
-
-It should print something similar to:
-
-```text
-[INFO agg] selected font families: ["Source Code Pro", "Fira Code", "DejaVu Sans", "Noto Emoji"]
-```
-
-This list may also include implicit addition of DejaVu Sans fallback (mentioned
-earlier), as well as Noto Emoji (see section below).
-
-Here's how to use [Nerd Fonts](https://www.nerdfonts.com/) with agg:
-
-1. Download one of the patched font sets from
-   <https://github.com/ryanoasis/nerd-fonts/releases/latest> , e.g. JetBrainsMono.zip
-2. Unzip them into `~/.local/share/fonts` (on Linux) or install with system font
-   manager (macOS, Windows)
-3. Specify font family like this:
-
-```bash
-agg --font-family "JetBrainsMono Nerd Font Mono" demo.cast demo.gif
-```
-
-## Emoji
-
-agg supports emojis when either [Noto Color
-Emoji](https://github.com/googlefonts/noto-emoji) or [Noto
-Emoji](https://fonts.google.com/noto/specimen/Noto+Emoji) font is installed. The
-default renderer, `resvg`, supports color emojis, while `fontdue` renderer only
-supports monochrome emojis.
-
-Install Noto Emoji font on your system or, point agg to a folder containing
-`NotoColorEmoji.ttf` or `NotoEmoji-*.ttf` files with `--font-dir`.
-
 ## Color themes
 
-There are several built-in color themes you can use with `--theme` option:
+There are several built-in color themes you can use with the `--theme` option:
 
 - asciinema
 - dracula (default)
+- github-dark, github-light
+- gruvbox-dark
+- kanagawa, kanagawa-dragon, kanagawa-light
 - monokai
-- solarized-dark
-- solarized-light
+- nord
+- solarized-dark, solarized-light
 
-If your asciicast file includes [theme definition](../asciicast/v2.md#theme)
-then it's used automatically unless `--theme` option is explicitly specified.
+If your asciicast file includes [theme definition](../asciicast/v3.md#theme)
+then it's used automatically unless the `--theme` option is explicitly
+specified.
 
-A custom, ad-hoc theme can be used with `--theme` option by passing a series of
-comma-separated hex triplets defining terminal background color, default text
-color and a color palette:
+A custom, ad-hoc theme can be used with the `--theme` option by passing a
+series of comma-separated hex triplets defining terminal background color,
+default text color and a color palette:
 
 ```text
 --theme bbbbbb,ffffff,000000,111111,222222,333333,444444,555555,666666,777777
 ```
 
-The above sets terminal background color to `bbbbbb`, default text color to `ffffff`,
-and uses remaining 8 colors as [SGR color
+The above sets background to `bbbbbb`, default text to `ffffff`, and uses
+the remaining 8 colors as [SGR color
 palette](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors).
 
 Additional bright color variants can be specified by adding 8 more hex triplets
@@ -117,10 +66,213 @@ at the end. For example, the equivalent of the built-in Monokai theme is:
 --theme 272822,f8f8f2,272822,f92672,a6e22e,f4bf75,66d9ef,ae81ff,a1efe4,f8f8f2,75715e,f92672,a6e22e,f4bf75,66d9ef,ae81ff,a1efe4,f9f8f5
 ```
 
+### Bold colors
+
+Some terminals render bold text using the bright variant of the active ANSI
+color (e.g. bold red shown as bright red). agg follows the more literal
+behavior by default. Pass `--bold-is-bright` to map ANSI colors 0–7 to 8–15
+when bold is set:
+
+```bash
+agg --bold-is-bright demo.cast demo.gif
+```
+
+## Fonts
+
+By default agg composes a font family list from three groups:
+
+1. **Text font** — `--text-font-family` (default:
+   `JetBrains Mono,Fira Code,SF Mono,Menlo,Consolas,DejaVu Sans Mono,Liberation Mono`).
+   The first family that resolves on your system is used as the primary
+   monospace font and drives terminal cell metrics.
+2. **Symbol fallback** — *Symbols Nerd Font* (bundled with agg) is appended
+   automatically. This makes powerline glyphs, devicons, and other Nerd Font
+   symbols render without installing a Nerd Font yourself. *DejaVu Sans* is
+   also appended if installed, to cover assorted Unicode symbols like ⣽ or ✔.
+3. **Emoji font** — `--emoji-font-family` (default:
+   `Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,JoyPixels,Twemoji,Noto Emoji`).
+   Every family in this list that resolves is appended to the chain. A
+   monochrome **Noto Emoji** is bundled with agg, so basic emoji rendering
+   works even without any system emoji font.
+
+To pick a different text font, pass a comma-separated list:
+
+```bash
+agg --text-font-family "Source Code Pro,Fira Code" demo.cast demo.gif
+```
+
+To narrow or change the emoji list:
+
+```bash
+agg --emoji-font-family "Noto Color Emoji" demo.cast demo.gif
+```
+
+Adjust line height with `--line-height` (default 1.4):
+
+```bash
+agg --line-height 1.6 demo.cast demo.gif
+```
+
+As long as the fonts are installed in standard system locations (e.g.
+`/usr/share/fonts` or `~/.local/share/fonts` on Linux) agg will find them.
+You can point agg at additional directories with `--font-dir`; the option
+may be repeated. Fonts loaded this way take precedence over system fonts:
+
+```bash
+agg --font-dir ~/my-fonts demo.cast demo.gif
+```
+
+To verify which families agg picked, run with `-v`:
+
+```bash
+agg -v --text-font-family "Source Code Pro" demo.cast demo.gif
+```
+
+You should see lines such as:
+
+```text
+[INFO agg] usable font families: ["Source Code Pro", "Symbols Nerd Font", "DejaVu Sans", "Noto Color Emoji", "Noto Emoji"]
+[INFO agg] primary text font family: Source Code Pro
+```
+
+### Bypassing automatic fallbacks
+
+If you need full control over the family list — for example to opt out of
+the bundled symbol/emoji fallbacks — use `--font-family`. It takes a
+comma-separated list which is used verbatim, and must start with a
+monospace text font:
+
+```bash
+agg --font-family "JetBrainsMono Nerd Font Mono" demo.cast demo.gif
+```
+
+`--font-family` cannot be combined with `--text-font-family` or
+`--emoji-font-family`.
+
+### Nerd Fonts
+
+To use a fully patched [Nerd Font](https://www.nerdfonts.com/) as the text
+font (beyond the bundled Symbols Nerd Font fallback):
+
+1. Download a patched set from
+   <https://github.com/ryanoasis/nerd-fonts/releases/latest>, e.g.
+   `JetBrainsMono.zip`.
+2. Unzip into `~/.local/share/fonts` (Linux) or install via the system
+   font manager (macOS, Windows).
+3. Use it as the text font:
+
+```bash
+agg --text-font-family "JetBrainsMono Nerd Font Mono" demo.cast demo.gif
+```
+
+## Emoji
+
+The default `--emoji-font-family` list covers the common color emoji fonts
+on each platform — install any of them and color emoji will render:
+
+- **Linux / Windows** — [Noto Color
+  Emoji](https://fonts.google.com/noto/specimen/Noto+Color+Emoji), Segoe UI
+  Emoji, JoyPixels, or Twemoji.
+- **macOS** — Apple Color Emoji ships with the system. agg loads it from
+  `/System/Library/Fonts/Apple Color Emoji.ttc` automatically, since it
+  isn't exposed by the OS as a regular font file.
+
+## Rendering backends
+
+agg has two rendering backends, selectable with `--renderer` (swash is the
+default since agg 1.8):
+
+- `swash` (default) — fast, supports color (CBDT/sbix) emoji.
+- `resvg` — slower, supports both CBDT/sbix and COLRv1 color emoji.
+
+### COLRv1 emoji under swash
+
+Recent Noto Color Emoji releases ship in the **COLRv1** format, which the
+swash renderer doesn't support. When agg detects a COLRv1 family in the
+selected chain it logs a warning at startup, and emoji glyphs fall back to
+the bundled monochrome Noto Emoji. (CBDT/sbix builds of Noto Color Emoji,
+Apple Color Emoji, Segoe UI Emoji, etc. render fine under swash.)
+
+There are two ways around this:
+
+1. **Switch renderer per recording** — pass `--renderer resvg`:
+
+   ```bash
+   agg --renderer resvg demo.cast demo.gif
+   ```
+
+   swash is otherwise preferable (faster and sharper), which is why it
+   stays the default — treat this as a per-recording trade-off rather
+   than a global switch.
+
+2. **Supply a non-COLRv1 emoji font** — download a CBDT build of Noto
+   Color Emoji (or another color emoji font), drop the `.ttf` into a
+   directory, and point agg at it with `--font-dir`. Fonts loaded that
+   way take precedence over system fonts, so swash will pick up the
+   non-COLRv1 version:
+
+   ```bash
+   agg --font-dir ~/emoji-fonts demo.cast demo.gif
+   ```
+
+## Playback
+
+### Speed
+
+`--speed` (default 1) scales playback speed. Use values >1 to speed up, <1
+to slow down:
+
+```bash
+agg --speed 2 demo.cast demo.gif
+```
+
+### Idle time limit
+
+`--idle-time-limit` (default 5, in seconds) caps any single inactive period,
+so long pauses don't bloat the GIF:
+
+```bash
+agg --idle-time-limit 1 demo.cast demo.gif
+```
+
+If the asciicast itself specifies an `idle_time_limit` it is used unless
+overridden on the command line.
+
+### Loop
+
+`--no-loop` plays the GIF once (by default it loops forever):
+
+```bash
+agg --no-loop demo.cast demo.gif
+```
+
+### FPS cap
+
+`--fps-cap` (default 30) limits the maximum frame rate of the generated GIF.
+Lower values produce smaller files at the cost of motion smoothness.
+
+### Last frame duration
+
+`--last-frame-duration` (default 3, in seconds) holds the final frame for
+extra time before the GIF loops or ends — handy when the recording finishes
+on important output.
+
+## Terminal size
+
+By default agg renders at the terminal size recorded in the asciicast header.
+Override with `--cols` and `--rows` to re-render at a different geometry:
+
+```bash
+agg --cols 100 --rows 30 demo.cast demo.gif
+```
+
+Note that reflow may differ from the original recording, so very long lines
+or full-screen TUIs may not look identical.
+
 ## GIF optimization
 
-GIF encoder used by agg, [gifski](https://github.com/ImageOptim/gifski),
-produces great looking GIF files, although this often comes at a cost - file
+The GIF encoder used by agg, [gifski](https://github.com/ImageOptim/gifski),
+produces great-looking GIF files, although this often comes at a cost — file
 size.
 
 [gifsicle](https://www.lcdf.org/gifsicle/) can be used to shrink the produced GIF file:
