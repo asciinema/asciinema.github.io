@@ -121,9 +121,12 @@ AsciinemaPlayer.create(
 Similarly to [inlining with Data URL](#inlining-with-data-url) this is useful
 for server-side generation use-cases.
 
-If `data` is a function, then the player invokes it when playback is started by
+If `data` is a function, then the player invokes it when the recording needs to
+be loaded for the first time. This typically happens when playback is started by
 a user. If [preload](options.md#preload) option is used, the function is invoked
-during player initialization (mounting in DOM).
+during player initialization (mounting in DOM). Loading is also triggered by
+programmatic `seek()` / `step()`, and by [NPT-based poster](options.md#poster)
+rendering.
 
 Say you'd like to embed asciicast contents in a (hidden) HTML tag on your page,
 following data source can be used to extract it and pass it to the player:
@@ -176,7 +179,8 @@ parsers](parsers.md#built-in-parsers), or [implement a custom parser
 function](parsers.md#custom-parsers).
 
 Recording format parser can be specified in the source argument to
-`AsciinemaPlayer.create` as a string (built-in) or a function (custom):
+`AsciinemaPlayer.create` as a string (built-in) or a function (custom), and can
+be used with both `url` and `data` sources:
 
 ```javascript
 AsciinemaPlayer.create({ url: url, parser: parser }, containerElement);
