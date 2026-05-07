@@ -37,6 +37,7 @@ of cool things out there (in alphabetical order):
 - [svg-term-cli](https://github.com/marionebl/svg-term-cli) - Share terminal sessions via SVG and CSS
 - [terminal-demo](https://github.com/ofek/terminal-demo) - Produce GIFs from shell commands
 - [wp-asciinema](https://github.com/passionsplay/wp-asciinema) - A WordPress plugin to allow for self-hosted asciicasts created with asciinema
+- [casteditor](https://the8tre.github.io/casteditor) - An asciinema cast visual editor with animated SVG export sitting in your browser
 
 To add your own project here edit [this
 file](https://github.com/asciinema/asciinema.github.io/blob/main/docs/integrations.md)
