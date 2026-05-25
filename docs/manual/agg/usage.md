@@ -107,12 +107,6 @@ To narrow or change the emoji list:
 agg --emoji-font-family "Noto Color Emoji" demo.cast demo.gif
 ```
 
-Adjust line height with `--line-height` (default 1.4):
-
-```bash
-agg --line-height 1.6 demo.cast demo.gif
-```
-
 As long as the fonts are installed in standard system locations (e.g.
 `/usr/share/fonts` or `~/.local/share/fonts` on Linux) agg will find them.
 You can point agg at additional directories with `--font-dir`; the option
@@ -164,6 +158,17 @@ font (beyond the bundled Symbols Nerd Font fallback):
 ```bash
 agg --text-font-family "JetBrainsMono Nerd Font Mono" demo.cast demo.gif
 ```
+
+### Font size and line height
+
+Use `--font-size` to change the terminal font size, and `--line-height` to
+adjust vertical spacing between rows:
+
+```bash
+agg --font-size 20 --line-height 1.6 demo.cast demo.gif
+```
+
+`--line-height` defaults to 1.4.
 
 ## Emoji
 
