@@ -211,8 +211,7 @@ There are two ways around this:
    ```
 
    swash is otherwise preferable (faster and sharper), which is why it
-   stays the default — treat this as a per-recording trade-off rather
-   than a global switch.
+   stays the default.
 
 2. **Supply a non-COLRv1 emoji font** — download a CBDT build of Noto
    Color Emoji (or another color emoji font), drop the `.ttf` into a
