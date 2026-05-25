@@ -145,8 +145,12 @@ agg --font-family "JetBrainsMono Nerd Font Mono" demo.cast demo.gif
 
 ### Nerd Fonts
 
-To use a fully patched [Nerd Font](https://www.nerdfonts.com/) as the text
-font (beyond the bundled Symbols Nerd Font fallback):
+In most cases Nerd Font symbols render properly thanks to the bundled
+Symbols Nerd Font fallback, so you typically don't need to install a patched
+text font. If some glyphs are missing and you need a newer Nerd Fonts
+release, you can either point agg at an updated Symbols Nerd Font with
+`--font-dir`, or use a fully patched [Nerd Font](https://www.nerdfonts.com/)
+as the text font:
 
 1. Download a patched set from
    <https://github.com/ryanoasis/nerd-fonts/releases/latest>, e.g.
