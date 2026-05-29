@@ -265,6 +265,37 @@ Lower values produce smaller files at the cost of motion smoothness.
 extra time before the GIF loops or ends — handy when the recording finishes
 on important output.
 
+## Frame selection
+
+Use `--select` to render only part of a recording, or selected terminal states:
+
+```bash
+agg --select 5..30 demo.cast clip.gif
+agg --select 12.5 demo.cast frame.gif
+agg --select marker:build..marker:test demo.cast build.gif
+agg --select markers demo.cast markers.gif
+```
+
+A selector is one of:
+
+- `..`, `POS..`, `..POS`, `POS..POS` — time range
+- `POS`, `POS,POS,...` — one or more discrete positions
+- `markers` — all marker positions
+
+`POS` can be a time (`12.5`, `1m20s`, `1:20`), percentage (`50%`), marker
+(`marker:build`, `marker:3`), or event index (`event:100`).
+
+Times are interpreted on the adjusted output timeline, after
+`--idle-time-limit` and `--speed`. Do not use spaces inside selectors: write
+`5..30`, not `5 .. 30`.
+
+Range selections produce an animated GIF for the selected interval. Discrete
+positions are rendered in order with `--last-frame-duration` spacing, which is
+useful for slideshow-style output.
+
+`markers` is standalone; use `marker:<value>` when mixing marker positions with
+ranges or lists.
+
 ## Terminal size
 
 By default agg renders at the terminal size recorded in the asciicast header.

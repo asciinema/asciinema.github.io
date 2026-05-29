@@ -60,7 +60,8 @@ administrators.
     installation, configuration and usage of each asciinema component
     ([CLI](manual/cli/index.md), [player](manual/player/index.md),
     [server](manual/server/index.md)). It also includes the specification of the
-    [file format](manual/asciicast/v3.md) used by asciinema.
+    [file format](manual/asciicast/v3.md) used by asciinema, and documentation
+    for [agg](manual/agg/index.md), the asciinema GIF generator.
 </div>
 
 If you're looking for something specific you can use the search bar at the top
