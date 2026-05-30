@@ -6,7 +6,8 @@ agg may be available in your operating system's packager manager repository.
 Search for `agg` or `asciinema-agg`.
 
 If it's not there then you can [download prebuilt agg
-binary](#prebuilt-binaries) or [build from source](#building-from-source).
+binary](#prebuilt-binaries), [use the container
+image](#oci-container-image), or [build from source](#building-from-source).
 
 ## Prebuilt binaries
 
@@ -29,6 +30,32 @@ Make it executable and put it somewhere in `$PATH`:
 chmod a+x agg
 sudo mv agg /usr/local/bin
 ```
+
+## OCI container image
+
+Official container images are published to the GitHub Container Registry at
+[`ghcr.io/asciinema/agg`](https://github.com/asciinema/agg/pkgs/container/agg).
+The image bundles agg with a broad set of monospace fonts, so recordings render
+out of the box.
+
+With Docker:
+
+```sh
+docker run --rm -u $(id -u):$(id -g) -v $PWD:/data ghcr.io/asciinema/agg demo.cast demo.gif
+```
+
+With Podman in root-less mode:
+
+```sh
+podman run --rm -v $PWD:/data ghcr.io/asciinema/agg demo.cast demo.gif
+```
+
+Under Docker, `-u $(id -u):$(id -g)` makes the output files owned by you instead
+of root; rootless Podman maps the container user to your account automatically,
+so it's not needed there.
+
+Besides `latest`, each release is tagged with its version, e.g.
+`ghcr.io/asciinema/agg:1.9.0`.
 
 ## Building from source
 
@@ -59,9 +86,10 @@ binary to a directory in your `$PATH`.
 
 ### Building with Docker
 
-Alternatively, if you have Docker, Podman or another Docker-compatible tool
-installed you can use it to build agg container image. This doesn't require Rust
-toolchain installed on your machine.
+If you'd rather build the container image yourself from the latest source —
+instead of using the [official image](#oci-container-image) — you can do so with
+Docker, Podman, or another Docker-compatible tool. This doesn't require a Rust
+toolchain on your machine.
 
 Build the image with the following command:
 
@@ -72,11 +100,11 @@ docker build -t agg .
 Then run agg like this:
 
 ```sh
-docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/data agg demo.cast demo.gif
+docker run --rm -u $(id -u):$(id -g) -v $PWD:/data agg demo.cast demo.gif
 ```
 
 If you use Podman in root-less mode:
 
 ```sh
-podman run --rm -it -v $PWD:/data agg demo.cast demo.gif
+podman run --rm -v $PWD:/data agg demo.cast demo.gif
 ```
