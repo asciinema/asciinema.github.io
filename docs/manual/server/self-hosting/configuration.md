@@ -4,12 +4,30 @@
 
 ### Base URL
 
-The base URL of the server is configured with the following environment
-variables:
+These variables tell the server its **public** address — the scheme, host and
+port that browsers use to reach it. The server uses them to generate links and
+the WebSocket URLs for live streaming, so they must match the address users
+actually connect to, not the port the container listens on internally.
 
-- `URL_HOST` - the hostname (domain) of the server, defaults to `localhost`
-- `URL_PORT` - the port it's accessible at, defaults to `4000`
-- `URL_SCHEME` - the URL scheme, defaults to `http`
+- `URL_HOST` - the public hostname (domain), defaults to `localhost`
+- `URL_PORT` - the public port, defaults to `4000`
+- `URL_SCHEME` - the public URL scheme (`http` or `https`), defaults to `http`
+
+!!! note
+
+    `URL_PORT` sets the port in generated URLs only; it does **not** change the
+    port the server binds to. The server listens on `4000` inside the container
+    by default (set `PORT` to change it) — point your reverse proxy at that
+    port, or at the host port you map it to.
+
+!!! warning "Behind a reverse proxy"
+
+    Set `URL_*` to the **public** address served by your proxy, not the port the
+    container listens on. With a proxy that terminates TLS this is usually
+    `URL_SCHEME=https` (which defaults `URL_PORT` to 443). A telltale sign of a
+    mismatch is uploads working while live streams show as **offline** — the
+    live-streaming WebSocket URLs (used by both the streaming CLI and viewers'
+    browsers) are built from these values.
 
 === "HTTP"
 
