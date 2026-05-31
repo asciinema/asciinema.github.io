@@ -4,10 +4,8 @@
 
 ### Base URL
 
-These variables tell the server its **public** address — the scheme, host and
-port that browsers use to reach it. The server uses them to generate links and
-the WebSocket URLs for live streaming, so they must match the address users
-actually connect to, not the port the container listens on internally.
+Set these to the public URL users open in their browser. The server uses it for
+generated links and live-streaming WebSocket URLs.
 
 - `URL_HOST` - the public hostname (domain), defaults to `localhost`
 - `URL_PORT` - the public port, defaults to `4000`
@@ -15,19 +13,9 @@ actually connect to, not the port the container listens on internally.
 
 !!! note
 
-    `URL_PORT` sets the port in generated URLs only; it does **not** change the
-    port the server binds to. The server listens on `4000` inside the container
-    by default (set `PORT` to change it) — point your reverse proxy at that
-    port, or at the host port you map it to.
-
-!!! warning "Behind a reverse proxy"
-
-    Set `URL_*` to the **public** address served by your proxy, not the port the
-    container listens on. With a proxy that terminates TLS this is usually
-    `URL_SCHEME=https` (which defaults `URL_PORT` to 443). A telltale sign of a
-    mismatch is uploads working while live streams show as **offline** — the
-    live-streaming WebSocket URLs (used by both the streaming CLI and viewers'
-    browsers) are built from these values.
+    `URL_PORT` only affects generated URLs. It does not change the port the
+    server listens on. Inside the container that is `4000` by default, or `PORT`
+    if set.
 
 === "HTTP"
 
@@ -77,6 +65,12 @@ actually connect to, not the port the container listens on internally.
     overridden by setting `URL_PORT` explicitly.
 
     For a complete HTTPS setup see [HTTPS](#https).
+
+When running behind a reverse proxy, use the proxy's public scheme, host and
+port here. For a standard HTTPS proxy, set `URL_SCHEME=https` and leave
+`URL_PORT` unset; set `URL_PORT` only when the public URL uses a non-standard
+port. If uploads work but live streams show as **offline**, check these values
+first.
 
 To verify the URL configuration, start the server, open the logs, and search for
 a line that looks like this:
