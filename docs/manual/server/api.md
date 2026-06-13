@@ -64,19 +64,46 @@ The only supported response format is also JSON, and requests must include
 either `Accept: application/json` or `Accept: */*` header.
 
 Successful responses (2xx status) return resource attributes directly (no
-envelopes). Error responses (4xx status) typically return error details in the
-`error` field.
+envelopes). Error responses (4xx status) return a JSON error object — see
+[Errors](#errors).
 
 ## Errors
 
-Common HTTP status codes used by the API for error cases:
+Error responses (4xx status) return a JSON object with:
 
-| Status Code | Description |
-|-------------|-------------|
-| **401** | **Unauthorized** - Missing or invalid auth header |
-| **403** | **Forbidden** - Access denied (e.g., streaming disabled) |
-| **404** | **Not Found** - Resource not found |
-| **422** | **Unprocessable Entity** - Validation errors |
+- `type` — a stable, machine-readable error code. Branch on this, not on the
+  human-readable message.
+- `message` — a human-readable description. This text may change between server
+  versions and should not be parsed.
+- `details` — present only for `validation_failed`: an array of `{"field":
+  ..., "message": ...}` objects describing per-field validation errors.
+
+New `type` values may be added over time, so clients should treat an unknown
+`type` as a generic error of its HTTP status.
+
+| `type` | Status | Meaning |
+|--------|--------|---------|
+| `unauthenticated` | 401 | Missing, malformed, or revoked installation ID. |
+| `account_required` | 401 | The installation ID is valid but not linked to an account, and the action requires an account. |
+| `access_denied` | 403 | Authenticated, but not allowed to perform the action (e.g. not the owner, or streaming disabled for the account). |
+| `not_found` | 404 | The requested resource does not exist. |
+| `content_too_large` | 413 | The uploaded recording exceeds the server's size limit. |
+| `validation_failed` | 422 | One or more request fields are invalid; see `details`. |
+| `upload_limit_reached` | 403 | The anonymous upload limit has been reached. |
+| `live_stream_limit_reached` | 422 | The account's concurrent live-stream limit has been reached. |
+| `bad_request` | 400 | The request was malformed. |
+
+Example error response:
+
+```json
+{
+  "type": "validation_failed",
+  "message": "Validation failed",
+  "details": [
+    { "field": "term_cols", "message": "can't be blank" }
+  ]
+}
+```
 
 ## Resources
 

@@ -139,6 +139,13 @@ you when facing issues.
 
 [Here](https://asciinema.org/about) is one on asciinema.org.
 
+### Admin panel
+
+By default the [admin panel](admin.md) is available only on a separate port
+(4002). Setting `ADMIN_PANEL_ON_MAIN_ENDPOINT=1` additionally makes it available at
+`/admin` on the main, user-facing web interface, for logged-in users with the
+admin flag. See [Administration](admin.md) for details.
+
 ## Database
 
 asciinema server utilizes a PostgreSQL database for storing recording metadata
@@ -529,6 +536,21 @@ By default uploading with `asciinema upload` doesn't require authentication via
 trusted environments, such as private LANs/homelabs. If you run a public
 asciinema server instance, or prefer to disable unauthenticated uploads for
 other reasons, then set `UPLOAD_AUTH_REQUIRED=true`.
+
+### Unregistered upload limit
+
+Recordings can be uploaded from a CLI that hasn't been authenticated with
+`asciinema auth`, in which case they aren't linked to any user account. To cap
+how many recordings can be uploaded from such an unregistered CLI, set
+`UNREGISTERED_UPLOAD_COUNT_LIMIT` to the maximum number, e.g.
+`UNREGISTERED_UPLOAD_COUNT_LIMIT=10`. Once an unregistered CLI reaches the limit,
+further uploads are rejected until it's authenticated with an account using
+`asciinema auth`.
+
+Setting `UNREGISTERED_UPLOAD_COUNT_LIMIT=0` blocks all uploads from unregistered
+CLIs - a stricter variant of `UPLOAD_AUTH_REQUIRED`, which only blocks CLIs the
+server hasn't seen before. When unset, the number of unregistered uploads is
+unlimited.
 
 ### Recording visibility
 
