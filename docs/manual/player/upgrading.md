@@ -75,7 +75,7 @@ The following table shows how 2.x attributes map to new 3.x options:
 --------------|------------|---------|------
 `cols` | `cols` | `{ cols: 80 }` |
 `rows` | `rows` | `{ rows: 24 }` |
-`autoplay` | `autoPlay` | `{ autoPlay: true }` |
+`autoplay` | `autoplay` | `{ autoplay: true }` |
 `preload` | `preload` | `{ preload: true }` |
 `loop` | `loop` | `{ loop: true }` or `{ loop: 3 }` |
 `start-at` | `startAt` | `{ startAt: 33 }` |

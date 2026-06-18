@@ -39,13 +39,17 @@ height saved in the asciicast file (after it gets loaded).
 
 Same recommendation as for `cols` applies here.
 
-### `autoPlay`
+### `autoplay`
 
 Type: boolean
 
 Set this option to `true` if the playback should start automatically.
 
 Defaults to `false` - no auto play.
+
+!!! note
+
+    `autoPlay` is also accepted as an alias for compatibility.
 
 ### `preload`
 
