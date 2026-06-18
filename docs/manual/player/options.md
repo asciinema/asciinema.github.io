@@ -376,6 +376,26 @@ between lines. A value of `2` makes it double the font size, etc.
 
 Defaults to `1.33333333`.
 
+### `cursorMode`
+
+Type: string
+
+Controls the appearance of the terminal cursor.
+
+Possible values:
+
+* `"blinking"` - show a blinking cursor
+* `"steady"` - show a non-blinking (steady) cursor
+* `"hidden"` - never show the cursor
+
+Defaults to `"blinking"`.
+
+!!! note
+
+    The `blinking` and `steady` modes only affect the cursor while the recorded
+    session keeps it visible; a session that hides its own cursor stays without
+    one. The `hidden` mode always hides the cursor.
+
 ### `logger`
 
 Type: console-like object
