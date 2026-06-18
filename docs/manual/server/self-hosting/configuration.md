@@ -146,6 +146,13 @@ By default the [admin panel](admin.md) is available only on a separate port
 `/admin` on the main, user-facing web interface, for logged-in users with the
 admin flag. See [Administration](admin.md) for details.
 
+### Time zone
+
+The server uses UTC by default. Set the standard `TZ` environment variable to a
+time zone name, e.g. `TZ=Europe/Berlin`, to make the server use that time zone
+for its local time, such as in the log timestamps. Timestamps are always stored
+in the PostgreSQL database in UTC.
+
 ## Database
 
 asciinema server utilizes a PostgreSQL database for storing recording metadata
