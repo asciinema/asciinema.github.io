@@ -193,6 +193,23 @@ player.addEventListener('ended', () => {
 })
 ```
 
+### `error` event
+
+`error` event is dispatched when the player fails to load or parse a recording
+and cannot continue playback.
+
+Callback's 1st argument is an object with `name` and `message` fields, which
+contain the error type and its description respectively.
+
+```javascript
+player.addEventListener('error', ({ name, message }) => {
+  console.error(`${name}: ${message}`);
+})
+```
+
+Failure to load optional audio is not fatal: the player continues without
+audio and does not dispatch this event.
+
 ### `input` event
 
 `input` event is dispatched for every keyboard input that was recorded.
