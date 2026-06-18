@@ -17,6 +17,7 @@ focus:
 * <kbd>f</kbd> - toggle fullscreen mode
 * <kbd>m</kbd> - mute / unmute audio (when audio track present)
 * <kbd>k</kbd> - toggle [keystroke overlay](options.md#keystrokeoverlay)
+* <kbd>?</kbd> - toggle help (list of keyboard shortcuts)
 
 Go ahead and try them out in the player below:
 
