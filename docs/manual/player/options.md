@@ -260,6 +260,27 @@ Valid values:
 
 Defaults to `"auto"`.
 
+### `keystrokeOverlay`
+
+Type: boolean
+
+Show or hide the keystroke overlay.
+
+When enabled, the keys pressed during the recording are displayed on top of the
+terminal as the recording plays back. This is only relevant for recordings that
+captured terminal input.
+
+The overlay shows the most recent keystrokes in the lower-right corner.
+Consecutive printable characters are grouped into a single label, and a key
+pressed repeatedly is shown with a repeat counter (e.g. `Ret × 3`).
+
+Defaults to `false`.
+
+!!! tip
+
+    The keystroke overlay can also be toggled at any time during playback with
+    the <kbd>k</kbd> [keyboard shortcut](shortcuts.md).
+
 ### `markers`
 
 Type: array

@@ -47,6 +47,8 @@ Notable features:
 - [automatic terminal scaling](options.md#fit) to fit into container element in
   most efficient way,
 - full-screen mode,
+- [keystroke overlay](options.md#keystrokeoverlay) showing keys typed during the
+  recording,
 - [multiple color themes for standard 16 colors](options.md#theme) + support for
   256 color palette and 24-bit true color (ISO-8613-3),
 - [adjustable playback speed](options.md#speed),

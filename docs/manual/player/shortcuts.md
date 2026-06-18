@@ -16,6 +16,7 @@ focus:
 * <kbd>,</kbd> / <kbd>.</kbd> - step back / forward, a frame at a time (when paused)
 * <kbd>f</kbd> - toggle fullscreen mode
 * <kbd>m</kbd> - mute / unmute audio (when audio track present)
+* <kbd>k</kbd> - toggle [keystroke overlay](options.md#keystrokeoverlay)
 
 Go ahead and try them out in the player below:
 
