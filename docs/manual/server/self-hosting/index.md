@@ -14,6 +14,9 @@ or internal/private use in any containerized environment using the official OCI
 image,
 [ghcr.io/asciinema/asciinema-server](https://github.com/asciinema/asciinema-server/pkgs/container/asciinema-server).
 
+On NixOS you can instead use the [NixOS module](nixos.md), which runs the server
+as a systemd service and can provision a PostgreSQL database for you.
+
 Requirements:
 
 - OCI runtime, e.g. [Docker](https://www.docker.com/),

@@ -1,5 +1,11 @@
 # Configuration
 
+!!! note
+
+    On NixOS these variables are set through the [NixOS module](nixos.md):
+    non-secret ones under `services.asciinema.environment`, secrets via
+    `environmentFile`.
+
 ## General
 
 ### Base URL

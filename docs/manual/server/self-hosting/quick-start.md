@@ -11,6 +11,10 @@ terminal session recordings.
 For a broader overview of what's possible with asciinema check out the [intro
 guide](../../../getting-started.md).
 
+!!! tip
+
+    Running NixOS? Use the [NixOS module](nixos.md) instead of docker-compose.
+
 To keep this guide simple we'll use the official asciinema server container
 image,
 [ghcr.io/asciinema/asciinema-server](https://github.com/asciinema/asciinema-server/pkgs/container/asciinema-server),

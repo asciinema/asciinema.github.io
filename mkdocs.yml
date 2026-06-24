@@ -83,6 +83,7 @@ nav:
       - Self-hosting:
         - manual/server/self-hosting/index.md
         - manual/server/self-hosting/quick-start.md
+        - manual/server/self-hosting/nixos.md
         - manual/server/self-hosting/configuration.md
         - manual/server/self-hosting/upgrading.md
         - manual/server/self-hosting/admin.md
