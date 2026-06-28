@@ -78,6 +78,18 @@ database, generates a `SECRET_KEY_BASE`, runs database migrations and starts the
 server; Caddy obtains a TLS certificate for your domain on first request. Visit
 the configured URL to verify it's up and running.
 
+!!! note "Logging in without SMTP"
+
+    `SMTP_*` is optional. With none set, the server logs each login link instead
+    of emailing it. Sign up on the site, then read the link from the journal:
+
+    ```sh
+    journalctl -u asciinema-server -g 'url from email' -e
+    ```
+
+    The first account to register becomes an admin. See
+    [Email](configuration.md#email).
+
 !!! note
 
     The example tracks the `main` branch, which always points at the latest

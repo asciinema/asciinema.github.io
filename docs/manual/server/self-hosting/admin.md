@@ -50,7 +50,9 @@ A user is an admin when their account has the admin flag set.
 
 On a brand-new instance the **first registered account is automatically made an
 admin**, so you can bootstrap a fresh server simply by signing up. All
-subsequent accounts are regular users.
+subsequent accounts are regular users. On a server without SMTP, complete that
+first sign-up by opening the login link from the logs; see
+[Email](configuration.md#email).
 
 ### Toggling the admin flag
 

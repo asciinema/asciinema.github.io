@@ -344,11 +344,23 @@ information on obtaining the account ID and the access key.
 asciinema server needs an email server/service to deliver emails containing
 short-lived login links.
 
-When no SMTP server is configured, no mail is sent. However, you can obtain a
-login link from the server container logs after entering your email address on
-the login page. Search for a line containing a URL, and open that URL in a
-browser. This is fine for testing, or a single-user server, but for a multi-user
-setup SMTP is necessary.
+When no SMTP server is configured, no mail is sent. Instead, every login link is
+written to the server log, so you can still sign in. This is all a single-user
+server needs; for a multi-user setup, configure SMTP below.
+
+After you enter your email address on the login page, the link is logged on a line
+tagged `url from email:`. Grab the most recent one (links are single-use and expire
+after about an hour) and open it in a browser:
+
+```sh
+docker compose logs asciinema | grep 'url from email'   # Docker
+journalctl -u asciinema-server -g 'url from email' -e    # NixOS / systemd
+```
+
+The first time, the link's path is `/users/new?t=...` (sign-up, where you choose a
+username); on later logins it's `/session/new?t=...`. The first account to register
+becomes an [admin](admin.md#the-first-account-becomes-an-admin), so a fresh instance
+can be bootstrapped entirely from the logs, no SMTP required.
 
 SMTP settings are configured with `SMTP_*` set of environment variables. The
 main ones are `SMTP_HOST`, `SMTP_USERNAME` and `SMTP_PASSWORD`.

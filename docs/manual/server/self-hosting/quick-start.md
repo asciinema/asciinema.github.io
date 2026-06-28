@@ -134,11 +134,11 @@ server is accessible.
 Check [general configuration](configuration.md#general) for more information on
 `SECRET_KEY_BASE` and `URL_*` variables.
 
-The `SMTP_*` variables configure SMTP server used for sending short-lived login
-links. If you don't set those no mail will be sent. However, you can still
-obtain a login link from the server logs after entering your email address on
-the login page. Check [email configuration](configuration.md#email) for more
-details, including configuration examples for popular SMTP providers.
+The `SMTP_*` variables configure the SMTP server used for sending short-lived
+login links. They're optional: if you don't set them no mail is sent, and you log
+in via a link from the server logs instead (see below). Check [email
+configuration](configuration.md#email) for more details, including configuration
+examples for popular SMTP providers.
 
 The server stores the uploaded recordings and other data at
 `/var/lib/asciinema`. We used volume mapping for this directory, but you can
@@ -174,6 +174,23 @@ database tables, and Caddy attempt to obtain a TLS certificate for your domain.
 Visit the configured URL in your web browser to verify it's up and running.
 
 Congratulations! You have your own asciinema server instance 🎉
+
+With the server up, log in to create your account. Open your server's URL, click
+**Sign in / Sign up**, and enter your email address - asciinema uses passwordless
+login and issues a one-time sign-in link.
+
+If you set the `SMTP_*` variables, the link arrives by email. If you didn't, the
+server writes it to its log instead; read the latest one and open it in your
+browser:
+
+```sh
+docker compose logs asciinema | grep 'url from email'
+```
+
+The first account to register becomes your instance's **admin**, so there's no
+separate setup step. Once you're in, you can close public sign-ups with
+`SIGN_UP_DISABLED=true`. See [Email](configuration.md#email) and
+[Administration](admin.md) for more.
 
 Now, point asciinema CLI to your server by setting `ASCIINEMA_API_URL`, and
 upload a recording:

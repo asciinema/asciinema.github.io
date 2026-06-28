@@ -24,8 +24,9 @@ Requirements:
 - 512 MB of RAM minimum (for a personal instance), 1 GB recommended (for a
   community/company instance)
 - [PostgreSQL](http://www.postgresql.org/download/) 14.0+ database server
-- SMTP server, either a dedicated service or an SMTP endpoint of your email
-  provider
+- SMTP server (optional) - a dedicated service or your email provider's SMTP
+  endpoint, for delivering login links. A single-user instance can skip it and
+  read login links from the logs instead; see [Email](configuration.md#email).
 
 To get started, follow the [quick start guide](quick-start.md), which provides a
 template for a standard asciinema server configuration using
