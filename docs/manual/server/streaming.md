@@ -367,26 +367,22 @@ being streamed (e.g. shell) exits.
 **EOT (0x04)** - End of Transmission
 
 ```
-[0x04][RelTime: LEB128]
+[0x04]
 ```
 
-Where:
-
-- **RelTime:** microseconds since last event
-
-This event should be used to signal streaming session end. It's typically sent
-as the last event before closing the connection.
+This event carries no payload. It should be used to signal streaming session
+end. It's typically sent as the last event before closing the connection.
 
 The connection may be reused for another session. In such case once EOT is
 received, the parser/decoder state must go back to post-magic-string pre-init
 state, expecting Init event to restart the stream from scratch.
 
-??? example "Example: EOT after 1s"
+??? info "Compatibility note"
 
-    ```
-    \x04   \x40\x42\x0F\x00
-    ^eot   ^1000000μs
-    ```
+    Earlier revisions of this protocol included a relative time in the EOT
+    event, and older asciinema CLI versions send an event ID followed by a
+    relative time. Consumers should ignore any bytes following 0x04 in this
+    event; the server accepts and ignores such payloads.
 
 ??? info "EOT and asciinema player"
 
