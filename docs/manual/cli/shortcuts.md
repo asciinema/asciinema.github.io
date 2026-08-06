@@ -14,9 +14,9 @@ The following keyboard shortcuts are available when recording with `asciinema re
 
 shortcut | action | 3.x config file option | 2.x config file option | notes
 ---------|--------|---------------|------|---
-<kbd>ctrl+\</kbd> | toggle the capture of a terminal | `recording.pause_key` | `rec.pause_key` | similar to "mute" on an audio call
+<kbd>ctrl+\</kbd> | toggle the capture of a terminal | `session.pause_key` | `record.pause_key` | similar to "mute" on an audio call
 <kbd>ctrl+d</kbd> | end the recording session | - | - |  this is handled by a shell
-- | add a [marker](markers.md) | `recording.add_marker_key` | `rec.add_marker_key` | no default shortcut for this
+- | add a [marker](markers.md) | `session.add_marker_key` | `record.add_marker_key` | no default shortcut for this
 
 ## Playback shortcuts
 
@@ -31,20 +31,19 @@ shortcut | action | 3.x config file option | 2.x config file option | notes
 
 ## Prefix key
 
-You can define a "prefix key" for the recording shortcuts with `rec.prefix_key`
-option in the config file:
+You can define a "prefix key" for the recording shortcuts in the [config file](configuration/index.md):
 
 === "CLI 3.0+"
 
     ```toml title="~/.config/asciinema/config.toml"
-    [recording]
+    [session]
     prefix_key = "C-a"
     ```
 
 === "CLI 2.0+"
 
     ```ini title="~/.config/asciinema/config"
-    [rec]
+    [record]
     prefix_key = C-a
     ```
 
@@ -62,3 +61,22 @@ enabled.
     2. There's no prefix key concept for the `play` command because there's no
     interactive process to forward the key presses during the playback, and
     therefore no risk of shortcut conflicts.
+
+## Marker shortcut
+
+You can define a shortcut to add [markers](markers.md) during a recording (no default defined).
+For example, to add the `ctrl+x` shortcut to the [config file](configuration/index.md):
+
+=== "CLI 3.0+"
+
+    ```toml title="~/.config/asciinema/config.toml"
+    [session]
+    add_marker_key = "^x"
+    ```
+
+=== "CLI 2.0+"
+
+    ```ini title="~/.config/asciinema/config"
+    [record]
+    prefix_key = C-x
+    ```
