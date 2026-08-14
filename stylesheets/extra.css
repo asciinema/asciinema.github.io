@@ -1,0 +1,55 @@
+:root {
+  --md-text-font: 'Fira Sans', sans-serif;
+  --md-code-font: 'Fira Mono', monospace;
+}
+
+article .player {
+  margin: 2em 0;
+}
+
+.ap-player .ap-overlay {
+  z-index: 2;
+}
+
+span.email {
+  font-weight: bold;
+}
+
+span.email b {
+  display: none;
+}
+
+a.btn-gh-sponsors {
+  background-color: #eee;
+  border-color: #ccc;
+  color: #333;
+  font-weight: 600;
+  border-radius: .2rem;
+  font-size: 90%;
+  line-height: 1.5;
+  padding: .25rem .5rem;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+a.btn-gh-sponsors:hover {
+  color: #000;
+}
+
+a.bitcoin-logo {
+  vertical-align: middle;
+  line-height: 1.5em;
+}
+
+a.bitcoin-logo img {
+  margin-right: 10px;
+  width: 32px;
+  vertical-align: middle;
+}
+
+main div.md-main__inner {
+  margin-bottom: 1.5rem;
+}
