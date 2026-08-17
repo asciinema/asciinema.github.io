@@ -10,6 +10,7 @@ of cool things out there (in alphabetical order):
 
 - [ansible-role-asciinema](https://github.com/darkwizard242/ansible-role-asciinema) - Ansible role for asciinema
 - [asciifx](https://github.com/apparebit/asciifx) - A special effects shop for asciinema
+- [asciicast2webp](https://git.janouch.name/p/asciicast2webp) - Render asciicast files as WebP, including key presses
 - [asciinema-comment](https://github.com/hydrargyrum/asciinema-comment) - Edit an asciinema cast to insert subtitles
 - [asciinema-director](https://github.com/stonecharioteer/asciinema-director) - A way to record your terminal using asciinema like a pro
 - [asciinema-edit](https://github.com/cirocosta/asciinema-edit) - asciinema casts post-production tools
